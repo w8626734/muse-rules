@@ -1,6 +1,6 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-26（2026-11-26 修订版 v3）
+# 生成日期: 2026-11-26（2026-11-26 修订版 v4）
 # 规则总数: 119 条（DOMAIN-SUFFIX 115 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
@@ -13,32 +13,22 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v3，2026-11-26）:
-#   在 v2 基础上按第二轮审查意见补齐：
-#   - P0 补 Akamai 精确域名：Facebook 静态资源还会走
-#     fbstatic-a.akamaihd.net、fbexternal-a.akamaihd.net、
-#     instagramstatic-a.akamaihd.net。注意这几个必须用 DOMAIN
-#     精确加，不能用 DOMAIN-SUFFIX,akamaihd.net——那是 Akamai
-#     共享 CDN，会误伤别的站。
-#   - P0 补区域域名：v2 只补了 facebook.br/.ca/.in/.tv 4 个，
-#     但当初关键词兜底就是为了 facebook.com.ar、
-#     facebook.com.br、instagram.com.br 这几个；另补
-#     instagram.com.al、instagram.com.bo，以及指向 Meta 同一 IP
-#     的 facebook.com.au、facebook.at、facebook.be。不补的话，
-#     去这些区域站就走直连了。
-#   - P1 补官方站：fbwat.ch（fb.watch 短链变体）、
-#     fbmessages.com（Messenger 相关）、instagr.am（Instagram
-#     短链）、instagram-help.com、instagram-press.net、
-#     instagrampartners.com（v2 只有 instagram-press.com，点
-#     帮助/合作页会漏）、oculusbrand.com（Oculus 品牌站）、
-#     facebookbrand.net（v2 只有 .com，上游 .com/.net 都有）、
-#     metamail.com（Meta 官方邮件域名，与 facebookmail.com 并列）、
-#     facebookgroups.com、facebookstories.com、
-#     facebookmobile.com、facebookshop.com（产品站）、
-#     fbthirdpartypixel.org（v2 有 .net/.com，缺 .org）。
-#   - 不补的：开源组是 v2 主动拆掉的，react.dev、pytorch.org
-#     不算缺，要用请另建规则文件。
-#   - v2 的改动全部保留：无 DOMAIN-KEYWORD、无 IP 段、无重复。
+# 修订说明（v4，2026-11-26）:
+#   按第三轮审查意见做三处小修（无规则增减，仍为 119 条）：
+#   - 删掉头部那句关于原规则集的说明：正文里从来没有加过
+#     对应的标记，这句话从 v1 留到现在一直对不上号，直接删掉。
+#   - 给已停用的域名标上“已停用”：accountkit.com（Account Kit
+#     登录 Kit 已停用）、crowdtangle.com（CrowdTangle 已停用）、
+#     igtv.com（IGTV 已停用）、freebasics.com / internet.org
+#     （Free Basics 已停用）、oculusrift.com（Oculus Rift 已停用）。
+#     规则本身留着不坏事，标出来是方便以后清理。
+#   - Workplace 注释措辞改成“已关停”，比原来更准确。
+#   - 不补的那几类（facebook.design、.shop、.us、
+#     facebook.com.mx/.cl/.co、thefacebook.net、freebasics.net、
+#     facebook-corp.com、facebook-newsroom.com、Akamai 老的
+#     fbcdn-sphotos-a、fbcdn-profile-a 等）按审查意见不加：
+#     基本是品牌保护域名或老 CDN，实际流量接近零，没必要为
+#     了凑数去抄上游那 500 多条里的 typo 仿冒站。
 # 主要来源:
 #   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
 #     (github.com/MetaCubeX/meta-rules-dat)
@@ -48,7 +38,6 @@
 #   - WhatsApp 官方 FAQ《The Meta Companies》
 #     (faq.whatsapp.com/481188387305001)
 # 说明:
-#   - 标注 ★原有 的 7 条为用户原规则集的全部规则，均已保留。
 #   - DOMAIN-SUFFIX 会匹配该域名及全部子域名，因此如
 #     graph.facebook.com、developers.facebook.com、web.whatsapp.com、
 #     api.whatsapp.com 等子域名已被父域名覆盖，不再单列。
@@ -75,6 +64,7 @@ DOMAIN-SUFFIX,facebookpay.com
 DOMAIN-SUFFIX,facebookportal.com
 DOMAIN-SUFFIX,facebooklive.com
 DOMAIN-SUFFIX,facebookgames.com
+# 已停用：Free Basics（免费基础服务）已停用，域名保留防存量访问。
 DOMAIN-SUFFIX,freebasics.com
 DOMAIN-SUFFIX,internet.org
 DOMAIN-SUFFIX,fbwat.ch
@@ -92,6 +82,7 @@ DOMAIN-SUFFIX,instagram.net
 DOMAIN-SUFFIX,cdninstagram.net
 DOMAIN-SUFFIX,ig.me
 DOMAIN-SUFFIX,igcdn.com
+# 已停用：IGTV 已停用，域名保留防存量访问。
 DOMAIN-SUFFIX,igtv.com
 DOMAIN-SUFFIX,instagram-brand.com
 DOMAIN-SUFFIX,instagram-press.com
@@ -144,6 +135,7 @@ DOMAIN-SUFFIX,oculus.com
 DOMAIN-SUFFIX,oculuscdn.com
 DOMAIN-SUFFIX,ocul.us
 DOMAIN-SUFFIX,oculusvr.com
+# 已停用：Oculus Rift 头显已停产，域名保留防存量访问。
 DOMAIN-SUFFIX,oculusrift.com
 DOMAIN-SUFFIX,oculusconnect.com
 DOMAIN-SUFFIX,oculusforbusiness.com
@@ -154,8 +146,8 @@ DOMAIN-SUFFIX,oculusblog.com
 DOMAIN-SUFFIX,oculusbrand.com
 
 # ---------------- 八、Workplace ----------------
-# 核心产品：Workplace 企业协同办公（注：Meta 已宣布 Workplace
-# 将逐步关停，域名仍保留以防存量账号访问）
+# 核心产品：Workplace 企业协同办公（注：Meta 已关停 Workplace，
+# 域名仍保留以防存量账号访问）
 DOMAIN-SUFFIX,workplace.com
 DOMAIN-SUFFIX,facebookwork.com
 DOMAIN-SUFFIX,workplaceusecases.com
@@ -169,6 +161,8 @@ DOMAIN-SUFFIX,facebookdevelopers.com
 DOMAIN-SUFFIX,facebookads.com
 DOMAIN-SUFFIX,facebookmarketingpartners.com
 DOMAIN-SUFFIX,facebookblueprint.net
+# 已停用：Account Kit（登录 Kit）已停用，CrowdTangle 已停用，
+# 域名保留防存量访问。
 DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,crowdtangle.com
 DOMAIN-SUFFIX,fbthirdpartypixel.net
