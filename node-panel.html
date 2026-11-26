@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>节点面板</title>
+    <style>
+      :root {
+        --bg: #f2f5f7;
+        --card: #ffffff;
+        --card-border: #e3e9ec;
+        --text: #1c2b33;
+        --text-2: #5b6f7a;
+        --text-3: #8a9aa3;
+        --accent: #0e7c66;
+        --accent-soft: #e3f2ee;
+        --accent-ink: #0a5f4f;
+        --code-bg: #f4f7f8;
+        --code-border: #dde5e8;
+        --warn-bg: #fdf3e3;
+        --warn-border: #f0dcae;
+        --warn-ink: #7a5410;
+        --ok: #1a9e57;
+        --bad: #c0453e;
+        --shadow: 0 1px 2px rgba(28, 43, 51, .05), 0 8px 24px rgba(28, 43, 51, .05);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #10171b;
+          --card: #182228;
+          --card-border: #26343d;
+          --text: #e6eef2;
+          --text-2: #9db2bd;
+          --text-3: #6e8593;
+          --accent: #2fae8f;
+          --accent-soft: #14332c;
+          --accent-ink: #7fd8c0;
+          --code-bg: #121a1f;
+          --code-border: #26343d;
+          --warn-bg: #33290f;
+          --warn-border: #57471d;
+          --warn-ink: #eec987;
+          --ok: #3fce7f;
+          --bad: #e06a63;
+          --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        line-height: 1.55;
+      }
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 28px 16px 48px;
+      }
+      header.page-head { margin-bottom: 20px; }
+      header.page-head h1 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: .01em;
+      }
+      header.page-head p {
+        margin: 6px 0 0;
+        color: var(--text-2);
+        font-size: 14px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+      .node-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .node-name {
+        margin: 0;
+        font-size: 21px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .node-loc {
+        margin: 4px 0 0;
+        color: var(--text-2);
+        font-size: 14px;
+      }
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        color: var(--text-2);
+        white-space: nowrap;
+      }
+      .status-pill .dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--text-3);
+        flex: none;
+      }
+      .status-pill.is-ok { color: var(--accent-ink); background: var(--accent-soft); border-color: transparent; }
+      .status-pill.is-ok .dot { background: var(--ok); }
+      .status-pill.is-bad { color: var(--bad); }
+      .status-pill.is-bad .dot { background: var(--bad); }
+      .status-pill.is-testing .dot {
+        background: var(--accent);
+        animation: pulse 1s ease-in-out infinite;
+      }
+      @keyframes pulse { 50% { opacity: .3; } }
+      @media (prefers-reduced-motion: reduce) {
+        .status-pill.is-testing .dot { animation: none; }
+      }
+      dl.facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px 16px;
+        margin: 18px 0 0;
+      }
+      dl.facts > div { min-width: 0; }
+      dl.facts dt {
+        font-size: 12px;
+        color: var(--text-3);
+        margin: 0 0 2px;
+      }
+      dl.facts dd {
+        margin: 0;
+        font-size: 14.5px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+      }
+      .field { margin-top: 18px; }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-2);
+        margin-bottom: 7px;
+      }
+      .copy-row { display: flex; gap: 8px; align-items: stretch; }
+      .copy-row code {
+        flex: 1;
+        min-width: 0;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        line-height: 1.5;
+        background: var(--code-bg);
+        border: 1px solid var(--code-border);
+        border-radius: 10px;
+        padding: 9px 11px;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        display: flex;
+        align-items: center;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+        border-radius: 10px;
+        min-height: 40px;
+      }
+      .btn-copy {
+        flex: none;
+        padding: 0 16px;
+        font-size: 14px;
+        font-weight: 600;
+        background: var(--accent-soft);
+        color: var(--accent-ink);
+      }
+      .btn-copy:active { opacity: .75; }
+      .btn-copy.copied { background: var(--accent); color: #fff; }
+      .test-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--card-border);
+      }
+      .btn-test {
+        padding: 0 22px;
+        font-size: 15px;
+        font-weight: 600;
+        background: var(--accent);
+        color: #fff;
+        min-height: 44px;
+      }
+      .btn-test:active { opacity: .8; }
+      .btn-test[disabled] { opacity: .55; cursor: default; }
+      .latency {
+        font-size: 15px;
+        color: var(--text-2);
+      }
+      .latency strong {
+        color: var(--text);
+        font-size: 19px;
+        font-variant-numeric: tabular-nums;
+      }
+      .notice {
+        margin-top: 14px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        background: var(--warn-bg);
+        border: 1px solid var(--warn-border);
+        color: var(--warn-ink);
+        border-radius: 10px;
+        padding: 11px 13px;
+      }
+      .notice[hidden] { display: none; }
+      .foot-note {
+        margin: 4px 2px 0;
+        font-size: 12.5px;
+        color: var(--text-3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="page-head">
+        <h1>节点面板</h1>
+        <p>节点信息、订阅地址和在线检测，都在这一个页面里。</p>
+      </header>
+
+      <section class="card" aria-label="节点信息">
+        <div class="node-top">
+          <div>
+            <h2 class="node-name">立命馆</h2>
+            <p class="node-loc">瑞典 · 斯德哥尔摩</p>
+          </div>
+          <span class="status-pill" id="statusPill" role="status">
+            <span class="dot"></span><span id="statusText">未检测</span>
+          </span>
+        </div>
+
+        <dl class="facts">
+          <div>
+            <dt>服务器</dt>
+            <dd>se5.nodaroo.fun</dd>
+          </div>
+          <div>
+            <dt>端口</dt>
+            <dd>26295</dd>
+          </div>
+          <div>
+            <dt>协议</dt>
+            <dd>VLESS</dd>
+          </div>
+          <div>
+            <dt>传输 / 加密</dt>
+            <dd>WebSocket · 明文（无 TLS）</dd>
+          </div>
+        </dl>
+
+        <div class="field">
+          <label for="vlessText">VLESS 链接</label>
+          <div class="copy-row">
+            <code id="vlessText">vless://b6819e56-4f38-4505-b2b7-c57afd0f21f6@se5.nodaroo.fun:26295?path=%2Fws&amp;security=none&amp;type=ws#%E7%AB%8B%E5%91%BD%E9%A6%86</code>
+            <button type="button" class="btn-copy" data-copy="vlessText">复制</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subText">订阅链接</label>
+          <div class="copy-row">
+            <code id="subText">http://se5.nodaroo.fun:26295/sub</code>
+            <button type="button" class="btn-copy" data-copy="subText">复制</button>
+          </div>
+        </div>
+
+        <div class="test-row">
+          <button type="button" class="btn-test" id="testBtn">测延迟</button>
+          <span class="latency" id="latencyText">点一下，测测节点现在通不通。</span>
+        </div>
+        <p class="notice" id="notice" hidden></p>
+      </section>
+
+      <p class="foot-note">测延迟会请求本站的 /api/sub 接口：连得上就显示往返耗时，连不上会给出提示，不影响复制链接使用。</p>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- 复制 ---------- */
+        function copyText(text, btn) {
+          function done() {
+            var old = btn.textContent;
+            btn.textContent = "已复制";
+            btn.classList.add("copied");
+            setTimeout(function () {
+              btn.textContent = old;
+              btn.classList.remove("copied");
+            }, 1600);
+          }
+          function fallback() {
+            var ta = document.createElement("textarea");
+            ta.value = text;
+            ta.setAttribute("readonly", "");
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand("copy"); done(); } catch (e) { /* 选区已就绪，用户可手动复制 */ }
+            document.body.removeChild(ta);
+          }
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+          } else {
+            fallback();
+          }
+        }
+
+        var copyBtns = document.querySelectorAll("[data-copy]");
+        for (var i = 0; i < copyBtns.length; i++) {
+          (function (btn) {
+            btn.addEventListener("click", function () {
+              var el = document.getElementById(btn.getAttribute("data-copy"));
+              if (el) copyText(el.textContent.trim(), btn);
+            });
+          })(copyBtns[i]);
+        }
+
+        /* ---------- 测延迟：请求同源 /api/sub ---------- */
+        var testBtn = document.getElementById("testBtn");
+        var pill = document.getElementById("statusPill");
+        var statusText = document.getElementById("statusText");
+        var latencyText = document.getElementById("latencyText");
+        var notice = document.getElementById("notice");
+        var TIMEOUT_MS = 10000;
+
+        function setStatus(cls, text) {
+          pill.className = "status-pill" + (cls ? " " + cls : "");
+          statusText.textContent = text;
+        }
+
+        function friendlyFail(reason) {
+          setStatus("is-bad", "未连通");
+          latencyText.textContent = "这次没测到延迟。";
+          notice.hidden = false;
+          notice.textContent = reason;
+        }
+
+        testBtn.addEventListener("click", function () {
+          testBtn.disabled = true;
+          testBtn.textContent = "检测中…";
+          notice.hidden = true;
+          setStatus("is-testing", "检测中");
+          latencyText.textContent = "正在请求 /api/sub …";
+
+          var controller = ("AbortController" in window) ? new AbortController() : null;
+          var timer = controller ? setTimeout(function () { controller.abort(); }, TIMEOUT_MS) : null;
+          var start = (window.performance && performance.now) ? performance.now() : Date.now();
+
+          fetch("/api/sub", {
+            method: "GET",
+            cache: "no-store",
+            signal: controller ? controller.signal : undefined
+          }).then(function (res) {
+            if (timer) clearTimeout(timer);
+            var end = (window.performance && performance.now) ? performance.now() : Date.now();
+            var ms = Math.max(1, Math.round(end - start));
+            if (res.ok) {
+              setStatus("is-ok", "在线");
+              latencyText.innerHTML = "延迟 <strong>" + ms + " ms</strong> · 节点在线";
+            } else {
+              friendlyFail("接口有响应，但状态不对（HTTP " + res.status + "）。节点本身未必有问题，可能只是这个页面部署的服务器上还没有 /api/sub 接口。");
+            }
+          }).catch(function (err) {
+            if (timer) clearTimeout(timer);
+            if (err && err.name === "AbortError") {
+              friendlyFail("等了 " + (TIMEOUT_MS / 1000) + " 秒还没响应，先按未连通处理。可以稍后再点一次试试。");
+            } else {
+              friendlyFail("没连上本站的 /api/sub 接口。常见原因是：这个页面还没部署到带该接口的服务器上，或者是直接打开的本地文件。这不代表节点挂了——订阅链接能不能用，可以在代理软件里更新一次订阅验证。");
+            }
+          }).then(function () {
+            testBtn.disabled = false;
+            testBtn.textContent = "再测一次";
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
