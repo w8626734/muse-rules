@@ -1,0 +1,51 @@
+#!name=防VPN检测
+#!desc=阻止应用调用 IP/VPN 检测接口，减少被识别为代理/VPN 的可能。注意：服务端直接按 IP 判断的（比如 IP 在机房段黑名单里）拦不住，那得换住宅 IP 才行。
+#!author=大费鱼
+
+[Rule]
+# ---- 拦截常见 IP / VPN / 代理检测接口 ----
+# 应用调这些接口查 IP 是不是机房/VPN/代理，拦掉就查不出来。
+# 注意：拦掉后应用若“查不到就默认放行”就有效；若“查不到就默认拦截”
+# 则反而会被挡，需要针对具体应用再调。先按通用版给，某个应用不
+# 好用时告诉我，我再给你单独调。
+DOMAIN-SUFFIX,ip-api.com,REJECT
+DOMAIN-SUFFIX,ipinfo.io,REJECT
+DOMAIN-SUFFIX,ipgeolocation.io,REJECT
+DOMAIN-SUFFIX,ipleak.net,REJECT
+DOMAIN-SUFFIX,dnsleaktest.com,REJECT
+DOMAIN-SUFFIX,browserleaks.com,REJECT
+DOMAIN-SUFFIX,ip2location.com,REJECT
+DOMAIN-SUFFIX,ipqualityscore.com,REJECT
+DOMAIN-SUFFIX,getipintel.net,REJECT
+DOMAIN-SUFFIX,proxycheck.io,REJECT
+DOMAIN-SUFFIX,ipapi.co,REJECT
+DOMAIN-SUFFIX,ipwho.is,REJECT
+DOMAIN-SUFFIX,ifconfig.me,REJECT
+DOMAIN-SUFFIX,icanhazip.com,REJECT
+DOMAIN-SUFFIX,ip.sb,REJECT
+DOMAIN-SUFFIX,iphey.com,REJECT
+DOMAIN-SUFFIX,whoer.net,REJECT
+DOMAIN-SUFFIX,ip-score.com,REJECT
+DOMAIN-SUFFIX,proxyapi.com,REJECT
+DOMAIN-SUFFIX,vpnapi.io,REJECT
+DOMAIN-SUFFIX,iphub.info,REJECT
+DOMAIN-SUFFIX,ipdata.co,REJECT
+DOMAIN-SUFFIX,ipstack.com,REJECT
+DOMAIN-SUFFIX,abstractapi.com,REJECT
+
+# ---- 拦截 WebRTC / DNS 泄露检测页 ----
+# 这些页面用来测真实 IP 泄露，应用内嵌网页调它们时一并拦掉。
+DOMAIN-SUFFIX,webrtc.github.io,REJECT
+DOMAIN-SUFFIX,ipleak.com,REJECT
+DOMAIN-SUFFIX,dnsleak.com,REJECT
+DOMAIN-SUFFIX,perfect-privacy.com,REJECT
+
+[Script]
+# 去掉请求里可能暴露代理的头（X-Forwarded-For、Via 等），
+# 只对走代理的请求生效，不影响直连流量。
+http-request https://raw.githubusercontent.com/w8626734/muse-rules/main/anti-vpn-detect.js, tag=去代理头, enabled=true
+
+[MitM]
+# 脚本要改请求头，MitM 只开给检测类域名，不碰应用本身的业务域名，
+# 避免证书问题影响正常使用。
+hostname = ip-api.com, ipinfo.io, ipgeolocation.io, ipleak.net, dnsleaktest.com, browserleaks.com, ip2location.com, ipqualityscore.com, getipintel.net, proxycheck.io, ipapi.co, ipwho.is, ifconfig.me, icanhazip.com, ip.sb, iphey.com, whoer.net, ip-score.com, proxyapi.com, vpnapi.io, iphub.info, ipdata.co, ipstack.com, abstractapi.com, webrtc.github.io, ipleak.com, dnsleak.com, perfect-privacy.com
