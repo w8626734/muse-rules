@@ -1,7 +1,7 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-27（修订版 v6）
-# 规则总数: 140 条（DOMAIN-SUFFIX 136 条 + DOMAIN 4 条，纯域名规则）
+# 生成日期: 2026-11-27（修订版 v7）
+# 规则总数: 141 条（DOMAIN-SUFFIX 137 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
 #       Workplace、开发者与广告平台）的流量走代理
@@ -13,17 +13,19 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v6，2026-11-27）:
-#   按第五轮审查意见做五处修改（新增 4 条，136 条 → 140 条）：
-#   1. 补招聘域名：metacareers.com（Meta 现招聘官网）、
-#      facebookcareers.com（复数，之前只有单数 facebookcareer.com）。
-#      这是 v5 最大的遗漏。
-#   2. Messenger 标已关停：独立站 2026-04 已关闭，跳到
-#      facebook.com/messages，第三节注释改成已关停（同 Workplace）。
-#   3. gameroom.com 单独标已停用：它是 2021 年就关了的游戏平台，
-#      之前放在 Free Basics 那组里容易误会，现单独注释。
-#   4. 补成对域名：facebook.wang、mcrouter.org（配 mcrouter.net）。
-#   5. 头部日期统一成 2026-11-27；MetaCubeX 来源链接补上 meta 分支。
+# 修订说明（v7，2026-11-27）:
+#   按第六轮审查意见做四处修改（新增 1 条，140 条 → 141 条），
+#   均为注释口径收尾，无新增域名（除 facebookmail.tv 外）：
+#   1. 第九节补回 Account Kit / CrowdTangle 的“已停用”标注：
+#      这两个在 v4 时标过，v5 按字母排序时丢了，v6 也没补回来，
+#      现恢复（Account Kit、CrowdTangle 均已停用，域名保留防存量访问）。
+#   2. expresswifi.com 标已停用：Express WiFi 2022 年已关停，
+#      第十二节单独注释。
+#   3. terragraph.com 口径写清：它是 Meta 的无线回传网络基础设施
+#      （同 Express WiFi 一类），不是开发者代码库；头部“开源项目
+#      域名不在本规则内”指的是 React、RocksDB、HHVM、Flow、Parse
+#      这类开发者代码库网站，两者不冲突，terragraph.com 保留。
+#   4. 补 facebookmail.tv（配 facebookmail.com，成对遗漏）。
 # 主要来源:
 #   - MetaCubeX meta-rules-dat（meta 分支）
 #     geo/geosite/classical/meta.yaml
@@ -54,6 +56,7 @@ DOMAIN-SUFFIX,facebookgames.com
 DOMAIN-SUFFIX,facebookgroups.com
 DOMAIN-SUFFIX,facebooklive.com
 DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,facebookmail.tv
 DOMAIN-SUFFIX,facebookmobile.com
 DOMAIN-SUFFIX,facebookpay.com
 DOMAIN-SUFFIX,facebookportal.com
@@ -163,6 +166,8 @@ DOMAIN-SUFFIX,workplaceusecases.com
 # 注：graph.facebook.com、business.facebook.com、
 # developers.facebook.com 等子域名已被上方 facebook.com
 # 的 DOMAIN-SUFFIX 覆盖，不再单列。
+# 已停用：Account Kit（登录 Kit）已停用，CrowdTangle 已停用，
+# 域名保留防存量访问。
 DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,crowdtangle.com
 DOMAIN-SUFFIX,facebookads.com
@@ -223,6 +228,7 @@ DOMAIN-SUFFIX,instagram.com.br
 # Meta 公司官网、投资者关系、招聘等公司域名。
 DOMAIN-SUFFIX,aboutfacebook.com
 DOMAIN-SUFFIX,careersatfb.com
+# 已停用：Express WiFi 2022 年已关停，域名保留防存量访问。
 DOMAIN-SUFFIX,expresswifi.com
 DOMAIN-SUFFIX,facebook-corp.com
 DOMAIN-SUFFIX,facebook-newsroom.com
