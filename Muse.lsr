@@ -1,1 +1,191 @@
-IyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KIyDop4TliJnlkI3np7A6IE11c2UubHNyIOKAlCBNZXRhIOWFqOWutuahtuinhOWImembhgojIOeUn+aIkOaXpeacnzogMjAyNi0xMS0yNu+8iDIwMjYtMTEtMjYg5L+u6K6i54mIIHYy77yJCiMg6KeE5YiZ5oC75pWwOiA5NCDmnaHvvIhET01BSU4tU1VGRklYIDkzIOadoSArIERPTUFJTiAxIOadoe+8jOe6r+Wfn+WQjeinhOWIme+8iQojIOeUqOmAlDog5bCGIE1ldGEg5peX5LiL5YWo6YOo5Lqn5ZOB77yIRmFjZWJvb2vjgIFJbnN0YWdyYW3jgIFNZXNzZW5nZXLjgIEKIyAgICAgICBXaGF0c0FwcOOAgVRocmVhZHPjgIFNZXRhIEFJ44CBTXVzZeOAgU9jdWx1cyAvIE1ldGEgUXVlc3TjgIEKIyAgICAgICBXb3JrcGxhY2XjgIHlvIDlj5HogIXkuI7lub/lkYrlubPlj7DvvInnmoTmtYHph4/otbDku6PnkIYKIyDpgILnlKg6IExvb24g6L+c56iL6KeE5YiZ6ZuGIC8g5pys5Zyw6KeE5YiZ6ZuG77yILmxzcu+8iQojIOS9v+eUqOaWueazlToKIyAgIDEpIOi/nOeoi+W8leeUqO+8iOaOqOiNkO+8iTog5bCG5pys5paH5Lu25omY566h5ZCO77yM5ZyoIExvb24g6YWN572u55qECiMgICAgICBbUmVtb3RlIFJ1bGVdIOS4rea3u+WKoDoKIyAgICAgIDzop4TliJnmlofku7YgVVJMPiwgcG9saWN5PeS9oOeahOS7o+eQhuetlueVpeWQjSwgdGFnPU11c2UsIGVuYWJsZWQ9dHJ1ZQojICAgMikg5pys5Zyw5a+85YWlOiDlnKggTG9vbiDkuK3nm7TmjqXmt7vliqDkuLrmnKzlnLDop4TliJnpm4bmlofku7bjgIIKIyAgIOazqOaEjzogLmxzciDmlofku7bmnKzouqvkuI3luKbnrZbnlaXlkI3vvIznrZbnlaXlnKjlvJXnlKjml7bmjIflrprvvJsKIyAgICAgICAgIOavj+ihjOagvOW8j+S4uuOAjOinhOWImeexu+WeiyzljLnphY3lhoXlrrnjgI3vvIzms6jph4rku6UgIyDlvIDlpLTjgIIKIyDkv67orqLor7TmmI7vvIh2Mu+8jDIwMjYtMTEtMjbvvIk6CiMgICAtIOWIoOaOiSAzIOWkhOe6r+WGl+S9me+8mkRPTUFJTixkZXZlbG9wZXJzLmZhY2Vib29rLmNvbe+8iOW3suiiqwojICAgICBmYWNlYm9vay5jb20g55qEIERPTUFJTi1TVUZGSVgg6KaG55uW77yJ44CBCiMgICAgIERPTUFJTi1TVUZGSVgsZm5hLmZiY2RuLm5ldO+8iOW3suiiqyBmYmNkbi5uZXQg6KaG55uW77yJ44CBCiMgICAgIElQLUNJRFIsMTczLjI1Mi45Ni4wLzE577yI5bey5YyF5ZCr5ZyoIDE3My4yNTIuNjQuMC8xOCDph4zvvInjgIIKIyAgIC0g5Yig5o6JIERPTUFJTi1LRVlXT1JEIOWFnOW6lee7hO+8muWtkOS4suWMuemFjeS8muivr+S8pAojICAgICBpbnN0YWdyYW0tZG93bmxvYWRlci5jb23jgIF3aGF0c2FwcC1nYi5jb23jgIEKIyAgICAgZmFjZWJvb2stbG9naW4g6ZKT6bG856uZ562J77yM5LiU5pys6Lqr5LiN5a6M5pW077yI57y6IHRocmVhZHPjgIEKIyAgICAgbWV0YeOAgW1lc3NlbmdlcuOAgW11c2XvvInvvJvmlLnmiJDmmL7lvI/ooaXljLrln5/ln5/lkI3jgIIKIyAgIC0g5Yig5o6J5YWo6YOoIElQIOautee7hO+8mkFTMzI5MzQg5pyJIDIwMCDlpJrkuKogSVB2NCDliY3nvIDjgIEKIyAgICAgMzAwIOWkmuS4qiBJUHY2IOWJjee8gO+8jOaJi+W3peWPquaUtiAyMyDmnaHlv4XnhLbmvI/vvIjkvovlpoIKIyAgICAgNTcuMTQxLjAuMC8xNuOAgTE4NS42MC4yMTYuMC8yMuOAgTEwMi4xMzIuOTYuMC8yMOOAgQojICAgICAyYTAzOjI4ODA6MTAwMDo6LzM2IOmDveayoeaUtuWFqO+8ie+8jElQIOWPmOWMluWPiOW/q++8jAojICAgICDmiYvlt6Xnu7TmiqTkuIDlrprkvJrov4fmnJ/vvJtMb29uIOmHjOWfn+WQjeinhOWImeW3sue7j+Wkn+eUqO+8jAojICAgICBJUCDnu4Tnm7TmjqXliKDmjonmnIDnnIHkuovjgIIKIyAgIC0g5ouG5Ye656ys5Y2B5LiA57uE5byA5rqQ5Z+f5ZCN77yaUmVhY3QgMjAyNSDlubQgMTAg5pyI5bey56e75LqkCiMgICAgIExpbnV4IEZvdW5kYXRpb24g5LiL55qEIFJlYWN0IEZvdW5kYXRpb27vvIzkuKXmoLzor7Tlt7LkuI3nrpcKIyAgICAgTWV0YSDkuqflk4HvvJvkuJQgZ3JhcGhxbC5vcmfjgIFkb2N1c2F1cnVzLmlv44CBamVzdGpzLmlvCiMgICAgIOetiee8uuS4gOWNiuWPjeiAjOivr+WvvOOAguWmgumcgOS7o+eQhui/meS6m+W8gOa6kOerme+8jOivt+WPpuW7uuinhOWImeaWh+S7tuOAggojICAgLSDooaXljLrln5/ln5/lkI3vvJpmYWNlYm9vay5icuOAgWZhY2Vib29rLmNh44CBZmFjZWJvb2suaW7jgIEKIyAgICAgZmFjZWJvb2sudHbvvIjmupDoh6ogTWV0YUN1YmVYIG1ldGEueWFtbO+8ieOAggojICAgLSDooaUgTWV0YSDlhazlj7jln5/lkI3vvJphYm91dGZhY2Vib29rLmNvbeOAgWZhY2Vib29raW5jLmNvbeOAgQojICAgICBvY3VsdXMtY2hpbmEuY29t44CBZmFjZWJvb2tjYXJlZXIuY29t44CBY2FyZWVyc2F0ZmIuY29t44CCCiMgICAtIOS4jeaUtiB3aGF0c2FwcC1wbHVzLmluZm8gLyAubWUgLyAubmV077ya6YKj5piv56ys5LiJ5pa5CiMgICAgIOS/ruaUueeJiCBXaGF0c0FwcO+8jOS4jeaYr+WumOaWueeahOOAggojIOS4u+imgeadpea6kDoKIyAgIC0gTWV0YUN1YmVYIG1ldGEtcnVsZXMtZGF0IC8gZ2VvL2dlb3NpdGUvY2xhc3NpY2FsL21ldGEueWFtbAojICAgICAoZ2l0aHViLmNvbS9NZXRhQ3ViZVgvbWV0YS1ydWxlcy1kYXQpCiMgICAtIGl0ZG9naW5mby9hbGxvdy1kb21haW5zIFNlcnZpY2VzL21ldGEubHN077yIMTcg5LiqIE1ldGEg5qC45b+D5Z+f5ZCN77yJCiMgICAtIHRremMxMS9RWC1SdWxlcyBNZXRhLmxpc3TvvIhNZXRhIOWfn+WQje+8iQojICAgLSBNZXRhIOa8j+a0nui1j+mHkeiuoeWIkuWcqOWGjOWfn+WQjea4heWNle+8iOe7jyBhYmFub3ViaGFubmEuY29tIOaVtOeQhu+8iQojICAgLSBXaGF0c0FwcCDlrpjmlrkgRkFR44CKVGhlIE1ldGEgQ29tcGFuaWVz44CLCiMgICAgIChmYXEud2hhdHNhcHAuY29tLzQ4MTE4ODM4NzMwNTAwMSkKIyDor7TmmI46CiMgICAtIOagh+azqCDimIXljp/mnIkg55qEIDcg5p2h5Li655So5oi35Y6f6KeE5YiZ6ZuG55qE5YWo6YOo6KeE5YiZ77yM5Z2H5bey5L+d55WZ44CCCiMgICAtIERPTUFJTi1TVUZGSVgg5Lya5Yy56YWN6K+l5Z+f5ZCN5Y+K5YWo6YOo5a2Q5Z+f5ZCN77yM5Zug5q2k5aaCCiMgICAgIGdyYXBoLmZhY2Vib29rLmNvbeOAgWRldmVsb3BlcnMuZmFjZWJvb2suY29t44CBd2ViLndoYXRzYXBwLmNvbeOAgQojICAgICBhcGkud2hhdHNhcHAuY29tIOetieWtkOWfn+WQjeW3suiiq+eItuWfn+WQjeimhueblu+8jOS4jeWGjeWNleWIl+OAggojID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKIyAtLS0tLS0tLS0tLS0tLS0tIOS4gOOAgUZhY2Vib29rIOS4u+ermeS4juefremTviAtLS0tLS0tLS0tLS0tLS0tCiMg5qC45b+D5Lqn5ZOB77yaRmFjZWJvb2sg572R6aG1IC8gQXBwIC8g55+t6ZO+IC8g6ZmE5Lu2IC8g5pSv5LuYIC8g55u05pKtIC8g5ri45oiPCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2suY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2submV0CkRPTUFJTi1TVUZGSVgsZmFjZWJvb2sub3JnCkRPTUFJTi1TVUZGSVgsZmIuY29tCkRPTUFJTi1TVUZGSVgsZmIubWUKRE9NQUlOLVNVRkZJWCxmYi53YXRjaApET01BSU4tU1VGRklYLGZiLmdnCkRPTUFJTi1TVUZGSVgsZmJ1cmwuY29tCkRPTUFJTi1TVUZGSVgsZmJzYnguY29tCkRPTUFJTi1TVUZGSVgsZmJzYngubmV0CkRPTUFJTi1TVUZGSVgsdGhlZmFjZWJvb2suY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2ticmFuZC5jb20KRE9NQUlOLVNVRkZJWCxmYWNlYm9va21haWwuY29tCkRPTUFJTi1TVUZGSVgsZmJ3b3JrbWFpbC5jb20KRE9NQUlOLVNVRkZJWCxmYWNlYm9va3BheS5jb20KRE9NQUlOLVNVRkZJWCxmYWNlYm9va3BvcnRhbC5jb20KRE9NQUlOLVNVRkZJWCxmYWNlYm9va2xpdmUuY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2tnYW1lcy5jb20KRE9NQUlOLVNVRkZJWCxmcmVlYmFzaWNzLmNvbQpET01BSU4tU1VGRklYLGludGVybmV0Lm9yZwoKIyAtLS0tLS0tLS0tLS0tLS0tIOS6jOOAgUluc3RhZ3JhbSAtLS0tLS0tLS0tLS0tLS0tCiMg5qC45b+D5Lqn5ZOB77yaSW5zdGFncmFtIOe9kemhtSAvIEFwcCAvIOWbvueJh+inhumikSBDRE4gLyDnn63pk74KRE9NQUlOLVNVRkZJWCxpbnN0YWdyYW0uY29tCkRPTUFJTi1TVUZGSVgsY2RuaW5zdGFncmFtLmNvbQpET01BSU4tU1VGRklYLGluc3RhZ3JhbS5uZXQKRE9NQUlOLVNVRkZJWCxjZG5pbnN0YWdyYW0ubmV0CkRPTUFJTi1TVUZGSVgsaWcubWUKRE9NQUlOLVNVRkZJWCxpZ2Nkbi5jb20KRE9NQUlOLVNVRkZJWCxpZ3R2LmNvbQpET01BSU4tU1VGRklYLGluc3RhZ3JhbS1icmFuZC5jb20KRE9NQUlOLVNVRkZJWCxpbnN0YWdyYW0tcHJlc3MuY29tCkRPTUFJTi1TVUZGSVgsaW5zdGFncmFtLWVuZ2luZWVyaW5nLmNvbQoKIyAtLS0tLS0tLS0tLS0tLS0tIOS4ieOAgU1lc3NlbmdlciAtLS0tLS0tLS0tLS0tLS0tCiMg5qC45b+D5Lqn5ZOB77yaTWVzc2VuZ2VyIOe9kemhtSAvIEFwcCAvIOefremTviAvIOW8gOWPkeiAheaWh+ahowpET01BSU4tU1VGRklYLG1lc3Nlbmdlci5jb20KRE9NQUlOLVNVRkZJWCxmYm1lc3Nlbmdlci5jb20KRE9NQUlOLVNVRkZJWCxtLm1lCkRPTUFJTi1TVUZGSVgsbWVzc2VuZ2VyZGV2ZWxvcGVycy5jb20KCiMgLS0tLS0tLS0tLS0tLS0tLSDlm5vjgIFXaGF0c0FwcCAtLS0tLS0tLS0tLS0tLS0tCiMg5qC45b+D5Lqn5ZOB77yaV2hhdHNBcHAg572R6aG154mIIC8gQXBwIC8g5aqS5L2T5LiO5raI5oGv5pyN5Yqh5ZmoIC8g55+t6ZO+CkRPTUFJTi1TVUZGSVgsd2hhdHNhcHAuY29tCkRPTUFJTi1TVUZGSVgsd2hhdHNhcHAubmV0CkRPTUFJTi1TVUZGSVgsd2hhdHNhcHAuYml6CkRPTUFJTi1TVUZGSVgsd2EubWUKRE9NQUlOLVNVRkZJWCx3aGF0c2FwcC5vcmcKRE9NQUlOLVNVRkZJWCx3aGF0c2FwcC50dgpET01BSU4tU1VGRklYLHdoYXRzYXBwLmluZm8KRE9NQUlOLVNVRkZJWCx3aGF0c2FwcC5jYwpET01BSU4tU1VGRklYLHdoYXRzYXBwYnJhbmQuY29tCgojIC0tLS0tLS0tLS0tLS0tLS0g5LqU44CBVGhyZWFkcyAtLS0tLS0tLS0tLS0tLS0tCiMg5qC45b+D5Lqn5ZOB77yaVGhyZWFkcyDnvZHpobUgLyBBcHAKRE9NQUlOLVNVRkZJWCx0aHJlYWRzLm5ldApET01BSU4tU1VGRklYLHRocmVhZHMuY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2t0aHJlYWRzLm5ldAoKIyAtLS0tLS0tLS0tLS0tLS0tIOWFreOAgU1ldGEgQUkgLyBNdXNlIC8gTGxhbWEgLS0tLS0tLS0tLS0tLS0tLQojIOaguOW/g+S6p+WTge+8mk1ldGEgQUnjgIFNdXNl77yIbWV0YS5haSDml5fkuIsgQUkg5Yqp5omL77yJ44CBTGxhbWEg5qih5Z6L44CBCiMgTWV0YSDlhazlj7jlrpjnvZHlj4ogQUkg5YaF5a655YiG5Y+R5Z+f5ZCNCkRPTUFJTi1TVUZGSVgsbWV0YS5jb20KRE9NQUlOLVNVRkZJWCxtZXRhLmFpCkRPTUFJTi1TVUZGSVgsbWV0YWFpdm0uY29tCkRPTUFJTi1TVUZGSVgsbXVzZS5haQpET01BSU4tU1VGRklYLGxsYW1hLmNvbQpET01BSU4tU1VGRklYLG1ldGFhaXVzZXJjb250ZW50LmNvbQpET01BSU4tU1VGRklYLGF0bWV0YS5jb20KCiMgLS0tLS0tLS0tLS0tLS0tLSDkuIPjgIFPY3VsdXMgLyBNZXRhIFF1ZXN0IC0tLS0tLS0tLS0tLS0tLS0KIyDmoLjlv4Pkuqflk4HvvJpPY3VsdXMgLyBNZXRhIFF1ZXN0IOWVhuW6l+OAgVZSIOWGheWuueWIhuWPkeOAgeW8gOWPkeiAheS4juS8geS4mueJiApET01BSU4tU1VGRklYLG9jdWx1cy5jb20KRE9NQUlOLVNVRkZJWCxvY3VsdXNjZG4uY29tCkRPTUFJTi1TVUZGSVgsb2N1bC51cwpET01BSU4tU1VGRklYLG9jdWx1c3ZyLmNvbQpET01BSU4tU1VGRklYLG9jdWx1c3JpZnQuY29tCkRPTUFJTi1TVUZGSVgsb2N1bHVzY29ubmVjdC5jb20KRE9NQUlOLVNVRkZJWCxvY3VsdXNmb3JidXNpbmVzcy5jb20KRE9NQUlOLVNVRkZJWCxidXlvY3VsdXMuY29tCkRPTUFJTi1TVUZGSVgsYmlub2N1bHVzLmNvbQpET01BSU4tU1VGRklYLG9jdWx1czNkLmNvbQpET01BSU4tU1VGRklYLG9jdWx1c2Jsb2cuY29tCgojIC0tLS0tLS0tLS0tLS0tLS0g5YWr44CBV29ya3BsYWNlIC0tLS0tLS0tLS0tLS0tLS0KIyDmoLjlv4Pkuqflk4HvvJpXb3JrcGxhY2Ug5LyB5Lia5Y2P5ZCM5Yqe5YWs77yI5rOo77yaTWV0YSDlt7LlrqPluIMgV29ya3BsYWNlCiMg5bCG6YCQ5q2l5YWz5YGc77yM5Z+f5ZCN5LuN5L+d55WZ5Lul6Ziy5a2Y6YeP6LSm5Y+36K6/6Zeu77yJCkRPTUFJTi1TVUZGSVgsd29ya3BsYWNlLmNvbQpET01BSU4tU1VGRklYLGZhY2Vib29rd29yay5jb20KRE9NQUlOLVNVRkZJWCx3b3JrcGxhY2V1c2VjYXNlcy5jb20KCiMgLS0tLS0tLS0tLS0tLS0tLSDkuZ3jgIHlvIDlj5HogIUgLyDlub/lkYogLyDmlK/ku5ggLS0tLS0tLS0tLS0tLS0tLQojIOW8gOWPkeiAheW5s+WPsOOAgeW5v+WRiuaKleaUvuOAgeaVsOaNruWIhuaekOOAgeW8gOaUvuWbvuiwseWNj+iuruOAgeeZu+W9lSBLaXQKIyDms6jvvJpncmFwaC5mYWNlYm9vay5jb23jgIFidXNpbmVzcy5mYWNlYm9vay5jb23jgIEKIyBkZXZlbG9wZXJzLmZhY2Vib29rLmNvbSDnrYnlrZDln5/lkI3lt7LooqvkuIrmlrkgZmFjZWJvb2suY29tCiMg55qEIERPTUFJTi1TVUZGSVgg6KaG55uW77yM5LiN5YaN5Y2V5YiX44CCCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2tkZXZlbG9wZXJzLmNvbQpET01BSU4tU1VGRklYLGZhY2Vib29rYWRzLmNvbQpET01BSU4tU1VGRklYLGZhY2Vib29rbWFya2V0aW5ncGFydG5lcnMuY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2tibHVlcHJpbnQubmV0CkRPTUFJTi1TVUZGSVgsYWNjb3VudGtpdC5jb20KRE9NQUlOLVNVRkZJWCxjcm93ZHRhbmdsZS5jb20KRE9NQUlOLVNVRkZJWCxmYnRoaXJkcGFydHlwaXhlbC5uZXQKRE9NQUlOLVNVRkZJWCxmYnRoaXJkcGFydHlwaXhlbC5jb20KRE9NQUlOLVNVRkZJWCxvcGVuZ3JhcGhwcm90b2NvbC5jb20KRE9NQUlOLVNVRkZJWCxvcGVuZ3JhcGhwcm90b2NvbC5vcmcKRE9NQUlOLVNVRkZJWCxvZ3AubWUKRE9NQUlOLVNVRkZJWCxmYWNlYm9va2Nvbm5lY3QuY29tCgojIC0tLS0tLS0tLS0tLS0tLS0g5Y2B44CBQ0ROIOS4juWfuuehgOiuvuaWvSAtLS0tLS0tLS0tLS0tLS0tCiMg5Zu+54mH6KeG6aKRIENETuOAgUFrYW1haSDliqDpgJ/oioLngrnjgIHlhoXpg6ggQVBJIOS4jua2iOaBr+i3r+eUseWfuuehgOiuvuaWvQojIOazqO+8mmZuYS5mYmNkbi5uZXQg5bey6KKrIGZiY2RuLm5ldCDnmoQgRE9NQUlOLVNVRkZJWCDopobnm5bvvIzkuI3ljZXliJfjgIIKRE9NQUlOLVNVRkZJWCxmYmNkbi5uZXQKRE9NQUlOLVNVRkZJWCxmYmNkbi5jb20KRE9NQUlOLGZiY2RuLWEuYWthbWFpaGQubmV0CkRPTUFJTi1TVUZGSVgsdGZibncubmV0CkRPTUFJTi1TVUZGSVgsaW50ZXJuYWxmYi5jb20KRE9NQUlOLVNVRkZJWCxtY3JvdXRlci5uZXQKCiMgLS0tLS0tLS0tLS0tLS0tLSDljYHkuIDjgIHljLrln5/ln5/lkI3vvIjmmL7lvI/ooaXpvZDvvIkgLS0tLS0tLS0tLS0tLS0tLQojIEZhY2Vib29rIOWQhOWMuuWfn+Wfn+WQje+8iOa6kOiHqiBNZXRhQ3ViZVggbWV0YS55YW1s77yJ77yM5pi+5byP5YiX5Ye6CiMg5q+UIERPTUFJTi1LRVlXT1JEIOWtkOS4suWMuemFjeWuieWFqOW+l+Wkmu+8jOS4jeS8muivr+S8pOmSk+mxvOS7v+WGkuermeOAggpET01BSU4tU1VGRklYLGZhY2Vib29rLmJyCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2suY2EKRE9NQUlOLVNVRkZJWCxmYWNlYm9vay5pbgpET01BSU4tU1VGRklYLGZhY2Vib29rLnR2CgojIC0tLS0tLS0tLS0tLS0tLS0g5Y2B5LqM44CBTWV0YSDlhazlj7jln5/lkI0gLS0tLS0tLS0tLS0tLS0tLQojIE1ldGEg5YWs5Y+45a6Y572R44CB5oqV6LWE6ICF5YWz57O744CB5oub6IGY562J5YWs5Y+45Z+f5ZCN44CCCkRPTUFJTi1TVUZGSVgsYWJvdXRmYWNlYm9vay5jb20KRE9NQUlOLVNVRkZJWCxmYWNlYm9va2luYy5jb20KRE9NQUlOLVNVRkZJWCxvY3VsdXMtY2hpbmEuY29tCkRPTUFJTi1TVUZGSVgsZmFjZWJvb2tjYXJlZXIuY29tCkRPTUFJTi1TVUZGSVgsY2FyZWVyc2F0ZmIuY29tCg==
+# ============================================================
+# 规则名称: Muse.lsr — Meta 全家桶规则集
+# 生成日期: 2026-11-26（2026-11-26 修订版 v2）
+# 规则总数: 94 条（DOMAIN-SUFFIX 93 条 + DOMAIN 1 条，纯域名规则）
+# 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
+#       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
+#       Workplace、开发者与广告平台）的流量走代理
+# 适用: Loon 远程规则集 / 本地规则集（.lsr）
+# 使用方法:
+#   1) 远程引用（推荐）: 将本文件托管后，在 Loon 配置的
+#      [Remote Rule] 中添加:
+#      <规则文件 URL>, policy=你的代理策略名, tag=Muse, enabled=true
+#   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
+#   注意: .lsr 文件本身不带策略名，策略在引用时指定；
+#         每行格式为「规则类型,匹配内容」，注释以 # 开头。
+# 修订说明（v2，2026-11-26）:
+#   - 删掉 3 处纯冗余：DOMAIN,developers.facebook.com（已被
+#     facebook.com 的 DOMAIN-SUFFIX 覆盖）、
+#     DOMAIN-SUFFIX,fna.fbcdn.net（已被 fbcdn.net 覆盖）、
+#     IP-CIDR,173.252.96.0/19（已包含在 173.252.64.0/18 里）。
+#   - 删掉 DOMAIN-KEYWORD 兜底组：子串匹配会误伤
+#     instagram-downloader.com、whatsapp-gb.com、
+#     facebook-login 钓鱼站等，且本身不完整（缺 threads、
+#     meta、messenger、muse）；改成显式补区域域名。
+#   - 删掉全部 IP 段组：AS32934 有 200 多个 IPv4 前缀、
+#     300 多个 IPv6 前缀，手工只收 23 条必然漏（例如
+#     57.141.0.0/16、185.60.216.0/22、102.132.96.0/20、
+#     2a03:2880:1000::/36 都没收全），IP 变化又快，
+#     手工维护一定会过期；Loon 里域名规则已经够用，
+#     IP 组直接删掉最省事。
+#   - 拆出第十一组开源域名：React 2025 年 10 月已移交
+#     Linux Foundation 下的 React Foundation，严格说已不算
+#     Meta 产品；且 graphql.org、docusaurus.io、jestjs.io
+#     等缺一半反而误导。如需代理这些开源站，请另建规则文件。
+#   - 补区域域名：facebook.br、facebook.ca、facebook.in、
+#     facebook.tv（源自 MetaCubeX meta.yaml）。
+#   - 补 Meta 公司域名：aboutfacebook.com、facebookinc.com、
+#     oculus-china.com、facebookcareer.com、careersatfb.com。
+#   - 不收 whatsapp-plus.info / .me / .net：那是第三方
+#     修改版 WhatsApp，不是官方的。
+# 主要来源:
+#   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
+#     (github.com/MetaCubeX/meta-rules-dat)
+#   - itdoginfo/allow-domains Services/meta.lst（17 个 Meta 核心域名）
+#   - tkzc11/QX-Rules Meta.list（Meta 域名）
+#   - Meta 漏洞赏金计划在册域名清单（经 abanoubhanna.com 整理）
+#   - WhatsApp 官方 FAQ《The Meta Companies》
+#     (faq.whatsapp.com/481188387305001)
+# 说明:
+#   - 标注 ★原有 的 7 条为用户原规则集的全部规则，均已保留。
+#   - DOMAIN-SUFFIX 会匹配该域名及全部子域名，因此如
+#     graph.facebook.com、developers.facebook.com、web.whatsapp.com、
+#     api.whatsapp.com 等子域名已被父域名覆盖，不再单列。
+# ============================================================
+
+# ---------------- 一、Facebook 主站与短链 ----------------
+# 核心产品：Facebook 网页 / App / 短链 / 附件 / 支付 / 直播 / 游戏
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebook.org
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fb.watch
+DOMAIN-SUFFIX,fb.gg
+DOMAIN-SUFFIX,fburl.com
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fbsbx.net
+DOMAIN-SUFFIX,thefacebook.com
+DOMAIN-SUFFIX,facebookbrand.com
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,fbworkmail.com
+DOMAIN-SUFFIX,facebookpay.com
+DOMAIN-SUFFIX,facebookportal.com
+DOMAIN-SUFFIX,facebooklive.com
+DOMAIN-SUFFIX,facebookgames.com
+DOMAIN-SUFFIX,freebasics.com
+DOMAIN-SUFFIX,internet.org
+
+# ---------------- 二、Instagram ----------------
+# 核心产品：Instagram 网页 / App / 图片视频 CDN / 短链
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,instagram.net
+DOMAIN-SUFFIX,cdninstagram.net
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,igcdn.com
+DOMAIN-SUFFIX,igtv.com
+DOMAIN-SUFFIX,instagram-brand.com
+DOMAIN-SUFFIX,instagram-press.com
+DOMAIN-SUFFIX,instagram-engineering.com
+
+# ---------------- 三、Messenger ----------------
+# 核心产品：Messenger 网页 / App / 短链 / 开发者文档
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,fbmessenger.com
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,messengerdevelopers.com
+
+# ---------------- 四、WhatsApp ----------------
+# 核心产品：WhatsApp 网页版 / App / 媒体与消息服务器 / 短链
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsapp.org
+DOMAIN-SUFFIX,whatsapp.tv
+DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsappbrand.com
+
+# ---------------- 五、Threads ----------------
+# 核心产品：Threads 网页 / App
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,facebookthreads.net
+
+# ---------------- 六、Meta AI / Muse / Llama ----------------
+# 核心产品：Meta AI、Muse（meta.ai 旗下 AI 助手）、Llama 模型、
+# Meta 公司官网及 AI 内容分发域名
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,llama.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,atmeta.com
+
+# ---------------- 七、Oculus / Meta Quest ----------------
+# 核心产品：Oculus / Meta Quest 商店、VR 内容分发、开发者与企业版
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,ocul.us
+DOMAIN-SUFFIX,oculusvr.com
+DOMAIN-SUFFIX,oculusrift.com
+DOMAIN-SUFFIX,oculusconnect.com
+DOMAIN-SUFFIX,oculusforbusiness.com
+DOMAIN-SUFFIX,buyoculus.com
+DOMAIN-SUFFIX,binoculus.com
+DOMAIN-SUFFIX,oculus3d.com
+DOMAIN-SUFFIX,oculusblog.com
+
+# ---------------- 八、Workplace ----------------
+# 核心产品：Workplace 企业协同办公（注：Meta 已宣布 Workplace
+# 将逐步关停，域名仍保留以防存量账号访问）
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,facebookwork.com
+DOMAIN-SUFFIX,workplaceusecases.com
+
+# ---------------- 九、开发者 / 广告 / 支付 ----------------
+# 开发者平台、广告投放、数据分析、开放图谱协议、登录 Kit
+# 注：graph.facebook.com、business.facebook.com、
+# developers.facebook.com 等子域名已被上方 facebook.com
+# 的 DOMAIN-SUFFIX 覆盖，不再单列。
+DOMAIN-SUFFIX,facebookdevelopers.com
+DOMAIN-SUFFIX,facebookads.com
+DOMAIN-SUFFIX,facebookmarketingpartners.com
+DOMAIN-SUFFIX,facebookblueprint.net
+DOMAIN-SUFFIX,accountkit.com
+DOMAIN-SUFFIX,crowdtangle.com
+DOMAIN-SUFFIX,fbthirdpartypixel.net
+DOMAIN-SUFFIX,fbthirdpartypixel.com
+DOMAIN-SUFFIX,opengraphprotocol.com
+DOMAIN-SUFFIX,opengraphprotocol.org
+DOMAIN-SUFFIX,ogp.me
+DOMAIN-SUFFIX,facebookconnect.com
+
+# ---------------- 十、CDN 与基础设施 ----------------
+# 图片视频 CDN、Akamai 加速节点、内部 API 与消息路由基础设施
+# 注：fna.fbcdn.net 已被 fbcdn.net 的 DOMAIN-SUFFIX 覆盖，不单列。
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbcdn.com
+DOMAIN,fbcdn-a.akamaihd.net
+DOMAIN-SUFFIX,tfbnw.net
+DOMAIN-SUFFIX,internalfb.com
+DOMAIN-SUFFIX,mcrouter.net
+
+# ---------------- 十一、区域域名（显式补齐） ----------------
+# Facebook 各区域域名（源自 MetaCubeX meta.yaml），显式列出
+# 比 DOMAIN-KEYWORD 子串匹配安全得多，不会误伤钓鱼仿冒站。
+DOMAIN-SUFFIX,facebook.br
+DOMAIN-SUFFIX,facebook.ca
+DOMAIN-SUFFIX,facebook.in
+DOMAIN-SUFFIX,facebook.tv
+
+# ---------------- 十二、Meta 公司域名 ----------------
+# Meta 公司官网、投资者关系、招聘等公司域名。
+DOMAIN-SUFFIX,aboutfacebook.com
+DOMAIN-SUFFIX,facebookinc.com
+DOMAIN-SUFFIX,oculus-china.com
+DOMAIN-SUFFIX,facebookcareer.com
+DOMAIN-SUFFIX,careersatfb.com
