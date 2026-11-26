@@ -1,6 +1,6 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-27（修订版 v7）
+# 生成日期: 2026-11-27（修订版 v8）
 # 规则总数: 141 条（DOMAIN-SUFFIX 137 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
@@ -13,19 +13,17 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v7，2026-11-27）:
-#   按第六轮审查意见做四处修改（新增 1 条，140 条 → 141 条），
-#   均为注释口径收尾，无新增域名（除 facebookmail.tv 外）：
-#   1. 第九节补回 Account Kit / CrowdTangle 的“已停用”标注：
-#      这两个在 v4 时标过，v5 按字母排序时丢了，v6 也没补回来，
-#      现恢复（Account Kit、CrowdTangle 均已停用，域名保留防存量访问）。
-#   2. expresswifi.com 标已停用：Express WiFi 2022 年已关停，
-#      第十二节单独注释。
-#   3. terragraph.com 口径写清：它是 Meta 的无线回传网络基础设施
-#      （同 Express WiFi 一类），不是开发者代码库；头部“开源项目
-#      域名不在本规则内”指的是 React、RocksDB、HHVM、Flow、Parse
-#      这类开发者代码库网站，两者不冲突，terragraph.com 保留。
-#   4. 补 facebookmail.tv（配 facebookmail.com，成对遗漏）。
+# 修订说明（v8，2026-11-27）:
+#   按第七轮审查意见做两处补充（规则不变，仍为 141 条），
+#   均为头部说明收尾：
+#   1. 补上局限说明：本规则集是纯域名规则，不含 IP 规则——
+#      Meta 的 IP 段不在本规则内；若流量直接走 IP（不经过域名），
+#      本规则不会命中，需另配 IP 规则或走代理策略兜底。
+#   2. 补上一行原始链接：本文件的永久拉取地址写在下方“原始链接”。
+#   另：v7 修订说明里那句关于新增域名的拗口表述，
+#   已随本次重写修订说明一并去掉。
+# 原始链接:
+#   https://raw.githubusercontent.com/w8626734/muse-rules/main/Muse.lsr
 # 主要来源:
 #   - MetaCubeX meta-rules-dat（meta 分支）
 #     geo/geosite/classical/meta.yaml
@@ -36,6 +34,9 @@
 #   - WhatsApp 官方 FAQ《The Meta Companies》
 #     (faq.whatsapp.com/481188387305001)
 # 说明:
+#   - 本规则集是纯域名规则，不含 IP 规则：Meta 的 IP 段不在内，
+#     若流量直接走 IP（不经过域名），本规则不会命中，需另配
+#     IP 规则或走代理策略兜底。
 #   - DOMAIN-SUFFIX 会匹配该域名及全部子域名，因此如
 #     graph.facebook.com、developers.facebook.com、web.whatsapp.com、
 #     api.whatsapp.com 等子域名已被父域名覆盖，不再单列。
