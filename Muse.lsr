@@ -1,7 +1,7 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-26（2026-11-27 修订版 v5）
-# 规则总数: 136 条（DOMAIN-SUFFIX 132 条 + DOMAIN 4 条，纯域名规则）
+# 生成日期: 2026-11-27（修订版 v6）
+# 规则总数: 140 条（DOMAIN-SUFFIX 136 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
 #       Workplace、开发者与广告平台）的流量走代理
@@ -13,27 +13,20 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v5，2026-11-27）:
-#   按第四轮审查意见做六处修改（新增 17 条，119 条 → 136 条）：
-#   1. 修 header 计数错误：v4 说“三处”实际列了四项，统一为“四处”。
-#   2. oculus-china.com 从第十二节公司域名移到第七节 Oculus。
-#   3. 组内按字母排序（之前按感觉排，之后做 diff 很痛苦）。
-#   4. 补齐上游可信遗漏：区域域名 facebook.cc、.hu、.nl、.se、.us、
-#      .shop、.design；facebookemail.com；facebookmarketingpartner.com
-#      （单数，之前只有复数）；fb.careers；gameroom.com；
-#      expresswifi.com；terragraph.com。
-#   5. 品牌域名口径统一：补上 facebook-corp.com、
-#      facebook-newsroom.com、thefacebook.net、freebasics.net
-#      （文件里已留 facebookbrand.com、instagram-brand.com、
-#      oculusbrand.com 等同类域名，之前只留单数/单后缀不一致；
-#      facebook.design、.shop、.us 见第 4 条，已并入区域域名）。
-#   6. 明确排除项：Meta 开源项目域名（reactjs.org、react.com、
-#      rocksdb.org、hhvm.com、flowtype.org、parse.com 等）不在本
-#      规则内，本规则只覆盖 App / 主产品流量；上游 400 多条 typo
-#      仿冒站、whatsapp-plus 第三方改版、metaquest.com、
-#      fbstatic.com 继续不加（已核实均非 Meta 所有或为钓鱼站）。
+# 修订说明（v6，2026-11-27）:
+#   按第五轮审查意见做五处修改（新增 4 条，136 条 → 140 条）：
+#   1. 补招聘域名：metacareers.com（Meta 现招聘官网）、
+#      facebookcareers.com（复数，之前只有单数 facebookcareer.com）。
+#      这是 v5 最大的遗漏。
+#   2. Messenger 标已关停：独立站 2026-04 已关闭，跳到
+#      facebook.com/messages，第三节注释改成已关停（同 Workplace）。
+#   3. gameroom.com 单独标已停用：它是 2021 年就关了的游戏平台，
+#      之前放在 Free Basics 那组里容易误会，现单独注释。
+#   4. 补成对域名：facebook.wang、mcrouter.org（配 mcrouter.net）。
+#   5. 头部日期统一成 2026-11-27；MetaCubeX 来源链接补上 meta 分支。
 # 主要来源:
-#   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
+#   - MetaCubeX meta-rules-dat（meta 分支）
+#     geo/geosite/classical/meta.yaml
 #     (github.com/MetaCubeX/meta-rules-dat)
 #   - itdoginfo/allow-domains Services/meta.lst（17 个 Meta 核心域名）
 #   - tkzc11/QX-Rules Meta.list（Meta 域名）
@@ -53,6 +46,7 @@
 DOMAIN-SUFFIX,facebook.com
 DOMAIN-SUFFIX,facebook.net
 DOMAIN-SUFFIX,facebook.org
+DOMAIN-SUFFIX,facebook.wang
 DOMAIN-SUFFIX,facebookbrand.com
 DOMAIN-SUFFIX,facebookbrand.net
 DOMAIN-SUFFIX,facebookemail.com
@@ -77,6 +71,7 @@ DOMAIN-SUFFIX,fbworkmail.com
 # 已停用：Free Basics（免费基础服务）已停用，域名保留防存量访问。
 DOMAIN-SUFFIX,freebasics.com
 DOMAIN-SUFFIX,freebasics.net
+# 已停用：Gameroom（游戏平台）2021 年已关，域名保留防存量访问。
 DOMAIN-SUFFIX,gameroom.com
 DOMAIN-SUFFIX,internet.org
 DOMAIN-SUFFIX,metamail.com
@@ -102,7 +97,8 @@ DOMAIN-SUFFIX,instagram.net
 DOMAIN-SUFFIX,instagrampartners.com
 
 # ---------------- 三、Messenger ----------------
-# 核心产品：Messenger 网页 / App / 短链 / 开发者文档
+# Messenger 独立站已关停（2026-04 关闭，跳到 facebook.com/messages），
+# 域名保留防存量访问。
 DOMAIN-SUFFIX,fbmessages.com
 DOMAIN-SUFFIX,fbmessenger.com
 DOMAIN-SUFFIX,m.me
@@ -195,6 +191,7 @@ DOMAIN,fbstatic-a.akamaihd.net
 DOMAIN,instagramstatic-a.akamaihd.net
 DOMAIN-SUFFIX,internalfb.com
 DOMAIN-SUFFIX,mcrouter.net
+DOMAIN-SUFFIX,mcrouter.org
 DOMAIN-SUFFIX,terragraph.com
 DOMAIN-SUFFIX,tfbnw.net
 
@@ -230,5 +227,7 @@ DOMAIN-SUFFIX,expresswifi.com
 DOMAIN-SUFFIX,facebook-corp.com
 DOMAIN-SUFFIX,facebook-newsroom.com
 DOMAIN-SUFFIX,facebookcareer.com
+DOMAIN-SUFFIX,facebookcareers.com
 DOMAIN-SUFFIX,facebookinc.com
 DOMAIN-SUFFIX,fb.careers
+DOMAIN-SUFFIX,metacareers.com
