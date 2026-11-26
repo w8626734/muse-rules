@@ -1,0 +1,9 @@
+# Cue.lsr — Cue（justcue.ai）规则
+# 用途：在 Loon 中将 Cue 应用的流量走代理
+# 说明：Cue 是 justcue.ai 的个人 AI 助手（手机 App、网页、Mac、WhatsApp）。
+#       只包含 justcue.ai 自身域名及其全部子域名。
+#       注意：getcue.net、cueapi.ai、cueai.app、cueos.ai 是名字相似的
+#       不同产品，不包含在本规则内。
+# 版本：v1（2026-11-26）
+
+DOMAIN-SUFFIX,justcue.ai
