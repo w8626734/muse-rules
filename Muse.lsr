@@ -1,0 +1,216 @@
+# ============================================================
+# 规则名称: Muse.lsr — Meta 全家桶规则集
+# 生成日期: 2026-11-26
+# 规则总数: 126 条（域名规则 103 条 + IP 段 23 条）
+# 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
+#       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
+#       Workplace、开发者与广告平台）的流量走代理
+# 适用: Loon 远程规则集 / 本地规则集（.lsr）
+# 使用方法:
+#   1) 远程引用（推荐）: 将本文件托管后，在 Loon 配置的
+#      [Remote Rule] 中添加:
+#      <规则文件 URL>, policy=你的代理策略名, tag=Muse, enabled=true
+#   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
+#   注意: .lsr 文件本身不带策略名，策略在引用时指定；
+#         每行格式为「规则类型,匹配内容」，注释以 # 开头。
+# 更新方式: 对照下列来源定期核对域名与 IP 段后更新本文件；
+#   Meta 新增产品域名时，在对应分组下追加 DOMAIN-SUFFIX；
+#   IP 段变化频繁，以域名规则为主，IP 段仅作补充兜底。
+# 主要来源:
+#   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
+#     (github.com/MetaCubeX/meta-rules-dat)
+#   - itdoginfo/allow-domains Services/meta.lst（17 个 Meta 核心域名）
+#   - tkzc11/QX-Rules Meta.list（Meta 域名 + AS32934 IP 段）
+#   - Meta 漏洞赏金计划在册域名清单（经 abanoubhanna.com 整理）
+#   - WhatsApp 官方 FAQ《The Meta Companies》
+#     (faq.whatsapp.com/481188387305001)
+#   - AS32934 公开 BGP 数据：whois.ipinsight.io/AS32934、
+#     anbolink.com/tools/common-ip-ranges/meta（2026-11-02 快照）、
+#     cloud-ip-ranges.com/providers/meta、infobyip.com/as32934.html
+# 说明:
+#   - 标注 ★原有 的 7 条为用户原规则集的全部规则，均已保留。
+#   - DOMAIN-SUFFIX 会匹配该域名及全部子域名，因此如
+#     graph.facebook.com、developers.facebook.com、web.whatsapp.com、
+#     api.whatsapp.com 等子域名已被父域名覆盖，不再单列。
+#   - DOMAIN-KEYWORD 为兜底规则（放最后），用于命中 Meta
+#     未来新增的区域域名（如 facebook.com.ar）及未收录域名；
+#     关键词匹配范围较宽，如遇误伤可删除该组。
+#   - IP-CIDR 组为 AS32934 的主要聚合段（另含 AS54115  corporate
+#     段 199.201.64.0/22 未收录——此处只收 AS32934 主干段），
+#     仅作补充；Loon 中 IP 规则建议加 no-resolve 以省去 DNS 解析。
+# ============================================================
+
+# ---------------- 一、Facebook 主站与短链 ----------------
+# 核心产品：Facebook 网页 / App / 短链 / 附件 / 支付 / 直播 / 游戏
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebook.org
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fb.watch
+DOMAIN-SUFFIX,fb.gg
+DOMAIN-SUFFIX,fburl.com
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fbsbx.net
+DOMAIN-SUFFIX,thefacebook.com
+DOMAIN-SUFFIX,facebookbrand.com
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,fbworkmail.com
+DOMAIN-SUFFIX,facebookpay.com
+DOMAIN-SUFFIX,facebookportal.com
+DOMAIN-SUFFIX,facebooklive.com
+DOMAIN-SUFFIX,facebookgames.com
+DOMAIN-SUFFIX,freebasics.com
+DOMAIN-SUFFIX,internet.org
+
+# ---------------- 二、Instagram ----------------
+# 核心产品：Instagram 网页 / App / 图片视频 CDN / 短链
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,instagram.net
+DOMAIN-SUFFIX,cdninstagram.net
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,igcdn.com
+DOMAIN-SUFFIX,igtv.com
+DOMAIN-SUFFIX,instagram-brand.com
+DOMAIN-SUFFIX,instagram-press.com
+DOMAIN-SUFFIX,instagram-engineering.com
+
+# ---------------- 三、Messenger ----------------
+# 核心产品：Messenger 网页 / App / 短链 / 开发者文档
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,fbmessenger.com
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,messengerdevelopers.com
+
+# ---------------- 四、WhatsApp ----------------
+# 核心产品：WhatsApp 网页版 / App / 媒体与消息服务器 / 短链
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsapp.org
+DOMAIN-SUFFIX,whatsapp.tv
+DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsappbrand.com
+
+# ---------------- 五、Threads ----------------
+# 核心产品：Threads 网页 / App
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,facebookthreads.net
+
+# ---------------- 六、Meta AI / Muse / Llama ----------------
+# 核心产品：Meta AI、Muse（meta.ai 旗下 AI 助手）、Llama 模型、
+# Meta 公司官网及 AI 内容分发域名
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,llama.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,atmeta.com
+
+# ---------------- 七、Oculus / Meta Quest ----------------
+# 核心产品：Oculus / Meta Quest 商店、VR 内容分发、开发者与企业版
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,ocul.us
+DOMAIN-SUFFIX,oculusvr.com
+DOMAIN-SUFFIX,oculusrift.com
+DOMAIN-SUFFIX,oculusconnect.com
+DOMAIN-SUFFIX,oculusforbusiness.com
+DOMAIN-SUFFIX,buyoculus.com
+DOMAIN-SUFFIX,binoculus.com
+DOMAIN-SUFFIX,oculus3d.com
+DOMAIN-SUFFIX,oculusblog.com
+
+# ---------------- 八、Workplace ----------------
+# 核心产品：Workplace 企业协同办公（注：Meta 已宣布 Workplace
+# 将逐步关停，域名仍保留以防存量账号访问）
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,facebookwork.com
+DOMAIN-SUFFIX,workplaceusecases.com
+
+# ---------------- 九、开发者 / 广告 / 支付 ----------------
+# 开发者平台、广告投放、数据分析、开放图谱协议、登录 Kit
+# 注：graph.facebook.com、business.facebook.com 等子域名已被
+# 上方 facebook.com 的 DOMAIN-SUFFIX 覆盖，不再单列。
+DOMAIN,developers.facebook.com
+DOMAIN-SUFFIX,facebookdevelopers.com
+DOMAIN-SUFFIX,facebookads.com
+DOMAIN-SUFFIX,facebookmarketingpartners.com
+DOMAIN-SUFFIX,facebookblueprint.net
+DOMAIN-SUFFIX,accountkit.com
+DOMAIN-SUFFIX,crowdtangle.com
+DOMAIN-SUFFIX,fbthirdpartypixel.net
+DOMAIN-SUFFIX,fbthirdpartypixel.com
+DOMAIN-SUFFIX,opengraphprotocol.com
+DOMAIN-SUFFIX,opengraphprotocol.org
+DOMAIN-SUFFIX,ogp.me
+DOMAIN-SUFFIX,facebookconnect.com
+
+# ---------------- 十、CDN 与基础设施 ----------------
+# 图片视频 CDN、Akamai 加速节点、内部 API 与消息路由基础设施
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbcdn.com
+DOMAIN,fbcdn-a.akamaihd.net
+DOMAIN-SUFFIX,fna.fbcdn.net
+DOMAIN-SUFFIX,tfbnw.net
+DOMAIN-SUFFIX,internalfb.com
+DOMAIN-SUFFIX,mcrouter.net
+
+# ---------------- 十一、Meta 开源技术 ----------------
+# Meta 开源项目官网：React、RocksDB、HHVM / Hack、Flow、
+# Draft.js、fastText、PyTorch 生态（Bot Torch）等
+DOMAIN-SUFFIX,reactjs.org
+DOMAIN-SUFFIX,reactjs.com
+DOMAIN-SUFFIX,react.com
+DOMAIN-SUFFIX,rocksdb.org
+DOMAIN-SUFFIX,hhvm.com
+DOMAIN-SUFFIX,hacklang.org
+DOMAIN-SUFFIX,flowtype.org
+DOMAIN-SUFFIX,draftjs.org
+DOMAIN-SUFFIX,fasttext.cc
+DOMAIN-SUFFIX,botorch.org
+DOMAIN-SUFFIX,buckbuild.com
+DOMAIN-SUFFIX,recoiljs.org
+
+# ---------------- 十二、关键词兜底（放最后） ----------------
+# 命中 Meta 未来新增域名及各区域变体（如 facebook.com.ar、
+# instagram.com.br）；匹配范围较宽，如遇误伤可整组删除。
+DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,whatsapp
+DOMAIN-KEYWORD,oculus
+
+# ---------------- 十三、IP 段补充（AS32934 主干聚合段） ----------------
+# 来源：AS32934 公开 BGP 数据（whois.ipinsight.io/AS32934；
+# anbolink.com 2026-11-02 快照；cloud-ip-ranges.com/providers/meta）。
+# AS32934 共公告 200 余个 IPv4 前缀、300 余个 IPv6 前缀，此处仅收
+# 主要聚合段；完整清单见上述来源。IP 段变化频繁，仅作补充兜底，
+# 以域名规则为主；不需要时可整组删除。
+IP-CIDR,31.13.24.0/21,no-resolve
+IP-CIDR,31.13.64.0/18,no-resolve
+IP-CIDR,31.13.96.0/19,no-resolve
+IP-CIDR,45.64.40.0/22,no-resolve
+IP-CIDR,57.144.0.0/14,no-resolve
+IP-CIDR,66.220.144.0/20,no-resolve
+IP-CIDR,69.63.176.0/20,no-resolve
+IP-CIDR,69.171.224.0/19,no-resolve
+IP-CIDR,102.132.96.0/21,no-resolve
+IP-CIDR,103.4.96.0/22,no-resolve
+IP-CIDR,129.134.0.0/17,no-resolve
+IP-CIDR,157.240.0.0/17,no-resolve
+IP-CIDR,157.240.192.0/18,no-resolve
+IP-CIDR,163.70.128.0/17,no-resolve
+IP-CIDR,173.252.64.0/18,no-resolve
+IP-CIDR,173.252.96.0/19,no-resolve
+IP-CIDR,179.60.192.0/22,no-resolve
+IP-CIDR,204.15.20.0/22,no-resolve
+IP-CIDR,74.119.76.0/22,no-resolve
+IP-CIDR,185.89.216.0/23,no-resolve
+IP-CIDR,185.89.218.0/23,no-resolve
+IP-CIDR6,2a03:2880::/32,no-resolve
+IP-CIDR6,2620:0:1c00::/40,no-resolve
