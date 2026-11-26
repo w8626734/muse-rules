@@ -1,7 +1,7 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-26（2026-11-26 修订版 v2）
-# 规则总数: 94 条（DOMAIN-SUFFIX 93 条 + DOMAIN 1 条，纯域名规则）
+# 生成日期: 2026-11-26（2026-11-26 修订版 v3）
+# 规则总数: 119 条（DOMAIN-SUFFIX 115 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
 #       Workplace、开发者与广告平台）的流量走代理
@@ -13,31 +13,32 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v2，2026-11-26）:
-#   - 删掉 3 处纯冗余：DOMAIN,developers.facebook.com（已被
-#     facebook.com 的 DOMAIN-SUFFIX 覆盖）、
-#     DOMAIN-SUFFIX,fna.fbcdn.net（已被 fbcdn.net 覆盖）、
-#     IP-CIDR,173.252.96.0/19（已包含在 173.252.64.0/18 里）。
-#   - 删掉 DOMAIN-KEYWORD 兜底组：子串匹配会误伤
-#     instagram-downloader.com、whatsapp-gb.com、
-#     facebook-login 钓鱼站等，且本身不完整（缺 threads、
-#     meta、messenger、muse）；改成显式补区域域名。
-#   - 删掉全部 IP 段组：AS32934 有 200 多个 IPv4 前缀、
-#     300 多个 IPv6 前缀，手工只收 23 条必然漏（例如
-#     57.141.0.0/16、185.60.216.0/22、102.132.96.0/20、
-#     2a03:2880:1000::/36 都没收全），IP 变化又快，
-#     手工维护一定会过期；Loon 里域名规则已经够用，
-#     IP 组直接删掉最省事。
-#   - 拆出第十一组开源域名：React 2025 年 10 月已移交
-#     Linux Foundation 下的 React Foundation，严格说已不算
-#     Meta 产品；且 graphql.org、docusaurus.io、jestjs.io
-#     等缺一半反而误导。如需代理这些开源站，请另建规则文件。
-#   - 补区域域名：facebook.br、facebook.ca、facebook.in、
-#     facebook.tv（源自 MetaCubeX meta.yaml）。
-#   - 补 Meta 公司域名：aboutfacebook.com、facebookinc.com、
-#     oculus-china.com、facebookcareer.com、careersatfb.com。
-#   - 不收 whatsapp-plus.info / .me / .net：那是第三方
-#     修改版 WhatsApp，不是官方的。
+# 修订说明（v3，2026-11-26）:
+#   在 v2 基础上按第二轮审查意见补齐：
+#   - P0 补 Akamai 精确域名：Facebook 静态资源还会走
+#     fbstatic-a.akamaihd.net、fbexternal-a.akamaihd.net、
+#     instagramstatic-a.akamaihd.net。注意这几个必须用 DOMAIN
+#     精确加，不能用 DOMAIN-SUFFIX,akamaihd.net——那是 Akamai
+#     共享 CDN，会误伤别的站。
+#   - P0 补区域域名：v2 只补了 facebook.br/.ca/.in/.tv 4 个，
+#     但当初关键词兜底就是为了 facebook.com.ar、
+#     facebook.com.br、instagram.com.br 这几个；另补
+#     instagram.com.al、instagram.com.bo，以及指向 Meta 同一 IP
+#     的 facebook.com.au、facebook.at、facebook.be。不补的话，
+#     去这些区域站就走直连了。
+#   - P1 补官方站：fbwat.ch（fb.watch 短链变体）、
+#     fbmessages.com（Messenger 相关）、instagr.am（Instagram
+#     短链）、instagram-help.com、instagram-press.net、
+#     instagrampartners.com（v2 只有 instagram-press.com，点
+#     帮助/合作页会漏）、oculusbrand.com（Oculus 品牌站）、
+#     facebookbrand.net（v2 只有 .com，上游 .com/.net 都有）、
+#     metamail.com（Meta 官方邮件域名，与 facebookmail.com 并列）、
+#     facebookgroups.com、facebookstories.com、
+#     facebookmobile.com、facebookshop.com（产品站）、
+#     fbthirdpartypixel.org（v2 有 .net/.com，缺 .org）。
+#   - 不补的：开源组是 v2 主动拆掉的，react.dev、pytorch.org
+#     不算缺，要用请另建规则文件。
+#   - v2 的改动全部保留：无 DOMAIN-KEYWORD、无 IP 段、无重复。
 # 主要来源:
 #   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
 #     (github.com/MetaCubeX/meta-rules-dat)
@@ -67,6 +68,7 @@ DOMAIN-SUFFIX,fbsbx.com
 DOMAIN-SUFFIX,fbsbx.net
 DOMAIN-SUFFIX,thefacebook.com
 DOMAIN-SUFFIX,facebookbrand.com
+DOMAIN-SUFFIX,facebookbrand.net
 DOMAIN-SUFFIX,facebookmail.com
 DOMAIN-SUFFIX,fbworkmail.com
 DOMAIN-SUFFIX,facebookpay.com
@@ -75,6 +77,12 @@ DOMAIN-SUFFIX,facebooklive.com
 DOMAIN-SUFFIX,facebookgames.com
 DOMAIN-SUFFIX,freebasics.com
 DOMAIN-SUFFIX,internet.org
+DOMAIN-SUFFIX,fbwat.ch
+DOMAIN-SUFFIX,metamail.com
+DOMAIN-SUFFIX,facebookgroups.com
+DOMAIN-SUFFIX,facebookstories.com
+DOMAIN-SUFFIX,facebookmobile.com
+DOMAIN-SUFFIX,facebookshop.com
 
 # ---------------- 二、Instagram ----------------
 # 核心产品：Instagram 网页 / App / 图片视频 CDN / 短链
@@ -88,6 +96,10 @@ DOMAIN-SUFFIX,igtv.com
 DOMAIN-SUFFIX,instagram-brand.com
 DOMAIN-SUFFIX,instagram-press.com
 DOMAIN-SUFFIX,instagram-engineering.com
+DOMAIN-SUFFIX,instagr.am
+DOMAIN-SUFFIX,instagram-help.com
+DOMAIN-SUFFIX,instagram-press.net
+DOMAIN-SUFFIX,instagrampartners.com
 
 # ---------------- 三、Messenger ----------------
 # 核心产品：Messenger 网页 / App / 短链 / 开发者文档
@@ -95,6 +107,7 @@ DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,fbmessenger.com
 DOMAIN-SUFFIX,m.me
 DOMAIN-SUFFIX,messengerdevelopers.com
+DOMAIN-SUFFIX,fbmessages.com
 
 # ---------------- 四、WhatsApp ----------------
 # 核心产品：WhatsApp 网页版 / App / 媒体与消息服务器 / 短链
@@ -138,6 +151,7 @@ DOMAIN-SUFFIX,buyoculus.com
 DOMAIN-SUFFIX,binoculus.com
 DOMAIN-SUFFIX,oculus3d.com
 DOMAIN-SUFFIX,oculusblog.com
+DOMAIN-SUFFIX,oculusbrand.com
 
 # ---------------- 八、Workplace ----------------
 # 核心产品：Workplace 企业协同办公（注：Meta 已宣布 Workplace
@@ -159,6 +173,7 @@ DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,crowdtangle.com
 DOMAIN-SUFFIX,fbthirdpartypixel.net
 DOMAIN-SUFFIX,fbthirdpartypixel.com
+DOMAIN-SUFFIX,fbthirdpartypixel.org
 DOMAIN-SUFFIX,opengraphprotocol.com
 DOMAIN-SUFFIX,opengraphprotocol.org
 DOMAIN-SUFFIX,ogp.me
@@ -167,20 +182,33 @@ DOMAIN-SUFFIX,facebookconnect.com
 # ---------------- 十、CDN 与基础设施 ----------------
 # 图片视频 CDN、Akamai 加速节点、内部 API 与消息路由基础设施
 # 注：fna.fbcdn.net 已被 fbcdn.net 的 DOMAIN-SUFFIX 覆盖，不单列。
+# Akamai 那几个必须用 DOMAIN 精确加，不能用 DOMAIN-SUFFIX,
+# akamaihd.net（那是 Akamai 共享 CDN，会误伤别的站）。
 DOMAIN-SUFFIX,fbcdn.net
 DOMAIN-SUFFIX,fbcdn.com
 DOMAIN,fbcdn-a.akamaihd.net
+DOMAIN,fbstatic-a.akamaihd.net
+DOMAIN,fbexternal-a.akamaihd.net
+DOMAIN,instagramstatic-a.akamaihd.net
 DOMAIN-SUFFIX,tfbnw.net
 DOMAIN-SUFFIX,internalfb.com
 DOMAIN-SUFFIX,mcrouter.net
 
 # ---------------- 十一、区域域名（显式补齐） ----------------
-# Facebook 各区域域名（源自 MetaCubeX meta.yaml），显式列出
-# 比 DOMAIN-KEYWORD 子串匹配安全得多，不会误伤钓鱼仿冒站。
+# Facebook / Instagram 各区域域名（源自 MetaCubeX meta.yaml），
+# 显式列出比 DOMAIN-KEYWORD 子串匹配安全得多，不会误伤钓鱼仿冒站。
 DOMAIN-SUFFIX,facebook.br
 DOMAIN-SUFFIX,facebook.ca
 DOMAIN-SUFFIX,facebook.in
 DOMAIN-SUFFIX,facebook.tv
+DOMAIN-SUFFIX,facebook.com.ar
+DOMAIN-SUFFIX,facebook.com.br
+DOMAIN-SUFFIX,facebook.com.au
+DOMAIN-SUFFIX,facebook.at
+DOMAIN-SUFFIX,facebook.be
+DOMAIN-SUFFIX,instagram.com.br
+DOMAIN-SUFFIX,instagram.com.al
+DOMAIN-SUFFIX,instagram.com.bo
 
 # ---------------- 十二、Meta 公司域名 ----------------
 # Meta 公司官网、投资者关系、招聘等公司域名。
