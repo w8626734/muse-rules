@@ -1,7 +1,7 @@
 # ============================================================
 # 规则名称: Muse.lsr — Meta 全家桶规则集
-# 生成日期: 2026-11-26（2026-11-26 修订版 v4）
-# 规则总数: 119 条（DOMAIN-SUFFIX 115 条 + DOMAIN 4 条，纯域名规则）
+# 生成日期: 2026-11-26（2026-11-27 修订版 v5）
+# 规则总数: 136 条（DOMAIN-SUFFIX 132 条 + DOMAIN 4 条，纯域名规则）
 # 用途: 将 Meta 旗下全部产品（Facebook、Instagram、Messenger、
 #       WhatsApp、Threads、Meta AI、Muse、Oculus / Meta Quest、
 #       Workplace、开发者与广告平台）的流量走代理
@@ -13,22 +13,25 @@
 #   2) 本地导入: 在 Loon 中直接添加为本地规则集文件。
 #   注意: .lsr 文件本身不带策略名，策略在引用时指定；
 #         每行格式为「规则类型,匹配内容」，注释以 # 开头。
-# 修订说明（v4，2026-11-26）:
-#   按第三轮审查意见做三处小修（无规则增减，仍为 119 条）：
-#   - 删掉头部那句关于原规则集的说明：正文里从来没有加过
-#     对应的标记，这句话从 v1 留到现在一直对不上号，直接删掉。
-#   - 给已停用的域名标上“已停用”：accountkit.com（Account Kit
-#     登录 Kit 已停用）、crowdtangle.com（CrowdTangle 已停用）、
-#     igtv.com（IGTV 已停用）、freebasics.com / internet.org
-#     （Free Basics 已停用）、oculusrift.com（Oculus Rift 已停用）。
-#     规则本身留着不坏事，标出来是方便以后清理。
-#   - Workplace 注释措辞改成“已关停”，比原来更准确。
-#   - 不补的那几类（facebook.design、.shop、.us、
-#     facebook.com.mx/.cl/.co、thefacebook.net、freebasics.net、
-#     facebook-corp.com、facebook-newsroom.com、Akamai 老的
-#     fbcdn-sphotos-a、fbcdn-profile-a 等）按审查意见不加：
-#     基本是品牌保护域名或老 CDN，实际流量接近零，没必要为
-#     了凑数去抄上游那 500 多条里的 typo 仿冒站。
+# 修订说明（v5，2026-11-27）:
+#   按第四轮审查意见做六处修改（新增 17 条，119 条 → 136 条）：
+#   1. 修 header 计数错误：v4 说“三处”实际列了四项，统一为“四处”。
+#   2. oculus-china.com 从第十二节公司域名移到第七节 Oculus。
+#   3. 组内按字母排序（之前按感觉排，之后做 diff 很痛苦）。
+#   4. 补齐上游可信遗漏：区域域名 facebook.cc、.hu、.nl、.se、.us、
+#      .shop、.design；facebookemail.com；facebookmarketingpartner.com
+#      （单数，之前只有复数）；fb.careers；gameroom.com；
+#      expresswifi.com；terragraph.com。
+#   5. 品牌域名口径统一：补上 facebook-corp.com、
+#      facebook-newsroom.com、thefacebook.net、freebasics.net
+#      （文件里已留 facebookbrand.com、instagram-brand.com、
+#      oculusbrand.com 等同类域名，之前只留单数/单后缀不一致；
+#      facebook.design、.shop、.us 见第 4 条，已并入区域域名）。
+#   6. 明确排除项：Meta 开源项目域名（reactjs.org、react.com、
+#      rocksdb.org、hhvm.com、flowtype.org、parse.com 等）不在本
+#      规则内，本规则只覆盖 App / 主产品流量；上游 400 多条 typo
+#      仿冒站、whatsapp-plus 第三方改版、metaquest.com、
+#      fbstatic.com 继续不加（已核实均非 Meta 所有或为钓鱼站）。
 # 主要来源:
 #   - MetaCubeX meta-rules-dat / geo/geosite/classical/meta.yaml
 #     (github.com/MetaCubeX/meta-rules-dat)
@@ -41,6 +44,8 @@
 #   - DOMAIN-SUFFIX 会匹配该域名及全部子域名，因此如
 #     graph.facebook.com、developers.facebook.com、web.whatsapp.com、
 #     api.whatsapp.com 等子域名已被父域名覆盖，不再单列。
+#   - 各节内规则按字母排序；头部规则总数与实际行数一致，
+#     改动后请核对计数（DOMAIN-SUFFIX 行数 + DOMAIN 行数 = 总数）。
 # ============================================================
 
 # ---------------- 一、Facebook 主站与短链 ----------------
@@ -48,108 +53,113 @@
 DOMAIN-SUFFIX,facebook.com
 DOMAIN-SUFFIX,facebook.net
 DOMAIN-SUFFIX,facebook.org
-DOMAIN-SUFFIX,fb.com
-DOMAIN-SUFFIX,fb.me
-DOMAIN-SUFFIX,fb.watch
-DOMAIN-SUFFIX,fb.gg
-DOMAIN-SUFFIX,fburl.com
-DOMAIN-SUFFIX,fbsbx.com
-DOMAIN-SUFFIX,fbsbx.net
-DOMAIN-SUFFIX,thefacebook.com
 DOMAIN-SUFFIX,facebookbrand.com
 DOMAIN-SUFFIX,facebookbrand.net
+DOMAIN-SUFFIX,facebookemail.com
+DOMAIN-SUFFIX,facebookgames.com
+DOMAIN-SUFFIX,facebookgroups.com
+DOMAIN-SUFFIX,facebooklive.com
 DOMAIN-SUFFIX,facebookmail.com
-DOMAIN-SUFFIX,fbworkmail.com
+DOMAIN-SUFFIX,facebookmobile.com
 DOMAIN-SUFFIX,facebookpay.com
 DOMAIN-SUFFIX,facebookportal.com
-DOMAIN-SUFFIX,facebooklive.com
-DOMAIN-SUFFIX,facebookgames.com
+DOMAIN-SUFFIX,facebookshop.com
+DOMAIN-SUFFIX,facebookstories.com
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.gg
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fb.watch
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fbsbx.net
+DOMAIN-SUFFIX,fburl.com
+DOMAIN-SUFFIX,fbwat.ch
+DOMAIN-SUFFIX,fbworkmail.com
 # 已停用：Free Basics（免费基础服务）已停用，域名保留防存量访问。
 DOMAIN-SUFFIX,freebasics.com
+DOMAIN-SUFFIX,freebasics.net
+DOMAIN-SUFFIX,gameroom.com
 DOMAIN-SUFFIX,internet.org
-DOMAIN-SUFFIX,fbwat.ch
 DOMAIN-SUFFIX,metamail.com
-DOMAIN-SUFFIX,facebookgroups.com
-DOMAIN-SUFFIX,facebookstories.com
-DOMAIN-SUFFIX,facebookmobile.com
-DOMAIN-SUFFIX,facebookshop.com
+DOMAIN-SUFFIX,thefacebook.com
+DOMAIN-SUFFIX,thefacebook.net
 
 # ---------------- 二、Instagram ----------------
 # 核心产品：Instagram 网页 / App / 图片视频 CDN / 短链
-DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,cdninstagram.com
-DOMAIN-SUFFIX,instagram.net
 DOMAIN-SUFFIX,cdninstagram.net
 DOMAIN-SUFFIX,ig.me
 DOMAIN-SUFFIX,igcdn.com
 # 已停用：IGTV 已停用，域名保留防存量访问。
 DOMAIN-SUFFIX,igtv.com
-DOMAIN-SUFFIX,instagram-brand.com
-DOMAIN-SUFFIX,instagram-press.com
-DOMAIN-SUFFIX,instagram-engineering.com
 DOMAIN-SUFFIX,instagr.am
+DOMAIN-SUFFIX,instagram-brand.com
+DOMAIN-SUFFIX,instagram-engineering.com
 DOMAIN-SUFFIX,instagram-help.com
+DOMAIN-SUFFIX,instagram-press.com
 DOMAIN-SUFFIX,instagram-press.net
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,instagram.net
 DOMAIN-SUFFIX,instagrampartners.com
 
 # ---------------- 三、Messenger ----------------
 # 核心产品：Messenger 网页 / App / 短链 / 开发者文档
-DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,fbmessages.com
 DOMAIN-SUFFIX,fbmessenger.com
 DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,messenger.com
 DOMAIN-SUFFIX,messengerdevelopers.com
-DOMAIN-SUFFIX,fbmessages.com
 
 # ---------------- 四、WhatsApp ----------------
 # 核心产品：WhatsApp 网页版 / App / 媒体与消息服务器 / 短链
-DOMAIN-SUFFIX,whatsapp.com
-DOMAIN-SUFFIX,whatsapp.net
-DOMAIN-SUFFIX,whatsapp.biz
 DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-SUFFIX,whatsapp.org
 DOMAIN-SUFFIX,whatsapp.tv
-DOMAIN-SUFFIX,whatsapp.info
-DOMAIN-SUFFIX,whatsapp.cc
 DOMAIN-SUFFIX,whatsappbrand.com
 
 # ---------------- 五、Threads ----------------
 # 核心产品：Threads 网页 / App
-DOMAIN-SUFFIX,threads.net
-DOMAIN-SUFFIX,threads.com
 DOMAIN-SUFFIX,facebookthreads.net
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,threads.net
 
 # ---------------- 六、Meta AI / Muse / Llama ----------------
 # 核心产品：Meta AI、Muse（meta.ai 旗下 AI 助手）、Llama 模型、
 # Meta 公司官网及 AI 内容分发域名
-DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,atmeta.com
+DOMAIN-SUFFIX,llama.com
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,metaaiusercontent.com
 DOMAIN-SUFFIX,metaaivm.com
 DOMAIN-SUFFIX,muse.ai
-DOMAIN-SUFFIX,llama.com
-DOMAIN-SUFFIX,metaaiusercontent.com
-DOMAIN-SUFFIX,atmeta.com
 
 # ---------------- 七、Oculus / Meta Quest ----------------
 # 核心产品：Oculus / Meta Quest 商店、VR 内容分发、开发者与企业版
-DOMAIN-SUFFIX,oculus.com
-DOMAIN-SUFFIX,oculuscdn.com
-DOMAIN-SUFFIX,ocul.us
-DOMAIN-SUFFIX,oculusvr.com
-# 已停用：Oculus Rift 头显已停产，域名保留防存量访问。
-DOMAIN-SUFFIX,oculusrift.com
-DOMAIN-SUFFIX,oculusconnect.com
-DOMAIN-SUFFIX,oculusforbusiness.com
-DOMAIN-SUFFIX,buyoculus.com
 DOMAIN-SUFFIX,binoculus.com
+DOMAIN-SUFFIX,buyoculus.com
+DOMAIN-SUFFIX,ocul.us
+DOMAIN-SUFFIX,oculus-china.com
+DOMAIN-SUFFIX,oculus.com
 DOMAIN-SUFFIX,oculus3d.com
 DOMAIN-SUFFIX,oculusblog.com
 DOMAIN-SUFFIX,oculusbrand.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,oculusconnect.com
+DOMAIN-SUFFIX,oculusforbusiness.com
+# 已停用：Oculus Rift 头显已停产，域名保留防存量访问。
+DOMAIN-SUFFIX,oculusrift.com
+DOMAIN-SUFFIX,oculusvr.com
 
 # ---------------- 八、Workplace ----------------
 # 核心产品：Workplace 企业协同办公（注：Meta 已关停 Workplace，
 # 域名仍保留以防存量账号访问）
-DOMAIN-SUFFIX,workplace.com
 DOMAIN-SUFFIX,facebookwork.com
+DOMAIN-SUFFIX,workplace.com
 DOMAIN-SUFFIX,workplaceusecases.com
 
 # ---------------- 九、开发者 / 广告 / 支付 ----------------
@@ -157,57 +167,68 @@ DOMAIN-SUFFIX,workplaceusecases.com
 # 注：graph.facebook.com、business.facebook.com、
 # developers.facebook.com 等子域名已被上方 facebook.com
 # 的 DOMAIN-SUFFIX 覆盖，不再单列。
-DOMAIN-SUFFIX,facebookdevelopers.com
-DOMAIN-SUFFIX,facebookads.com
-DOMAIN-SUFFIX,facebookmarketingpartners.com
-DOMAIN-SUFFIX,facebookblueprint.net
-# 已停用：Account Kit（登录 Kit）已停用，CrowdTangle 已停用，
-# 域名保留防存量访问。
 DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,crowdtangle.com
-DOMAIN-SUFFIX,fbthirdpartypixel.net
+DOMAIN-SUFFIX,facebookads.com
+DOMAIN-SUFFIX,facebookblueprint.net
+DOMAIN-SUFFIX,facebookconnect.com
+DOMAIN-SUFFIX,facebookdevelopers.com
+DOMAIN-SUFFIX,facebookmarketingpartner.com
+DOMAIN-SUFFIX,facebookmarketingpartners.com
 DOMAIN-SUFFIX,fbthirdpartypixel.com
+DOMAIN-SUFFIX,fbthirdpartypixel.net
 DOMAIN-SUFFIX,fbthirdpartypixel.org
+DOMAIN-SUFFIX,ogp.me
 DOMAIN-SUFFIX,opengraphprotocol.com
 DOMAIN-SUFFIX,opengraphprotocol.org
-DOMAIN-SUFFIX,ogp.me
-DOMAIN-SUFFIX,facebookconnect.com
 
 # ---------------- 十、CDN 与基础设施 ----------------
 # 图片视频 CDN、Akamai 加速节点、内部 API 与消息路由基础设施
 # 注：fna.fbcdn.net 已被 fbcdn.net 的 DOMAIN-SUFFIX 覆盖，不单列。
 # Akamai 那几个必须用 DOMAIN 精确加，不能用 DOMAIN-SUFFIX,
 # akamaihd.net（那是 Akamai 共享 CDN，会误伤别的站）。
-DOMAIN-SUFFIX,fbcdn.net
-DOMAIN-SUFFIX,fbcdn.com
 DOMAIN,fbcdn-a.akamaihd.net
-DOMAIN,fbstatic-a.akamaihd.net
+DOMAIN-SUFFIX,fbcdn.com
+DOMAIN-SUFFIX,fbcdn.net
 DOMAIN,fbexternal-a.akamaihd.net
+DOMAIN,fbstatic-a.akamaihd.net
 DOMAIN,instagramstatic-a.akamaihd.net
-DOMAIN-SUFFIX,tfbnw.net
 DOMAIN-SUFFIX,internalfb.com
 DOMAIN-SUFFIX,mcrouter.net
+DOMAIN-SUFFIX,terragraph.com
+DOMAIN-SUFFIX,tfbnw.net
 
-# ---------------- 十一、区域域名（显式补齐） ----------------
-# Facebook / Instagram 各区域域名（源自 MetaCubeX meta.yaml），
-# 显式列出比 DOMAIN-KEYWORD 子串匹配安全得多，不会误伤钓鱼仿冒站。
-DOMAIN-SUFFIX,facebook.br
-DOMAIN-SUFFIX,facebook.ca
-DOMAIN-SUFFIX,facebook.in
-DOMAIN-SUFFIX,facebook.tv
-DOMAIN-SUFFIX,facebook.com.ar
-DOMAIN-SUFFIX,facebook.com.br
-DOMAIN-SUFFIX,facebook.com.au
+# ---------------- 十一、区域域名 ----------------
+# Facebook / Instagram 各区域域名（源自 MetaCubeX meta.yaml 及
+# 常用区域域名），显式列出比 DOMAIN-KEYWORD 子串匹配安全得多，
+# 不会误伤钓鱼仿冒站。
 DOMAIN-SUFFIX,facebook.at
 DOMAIN-SUFFIX,facebook.be
-DOMAIN-SUFFIX,instagram.com.br
+DOMAIN-SUFFIX,facebook.br
+DOMAIN-SUFFIX,facebook.ca
+DOMAIN-SUFFIX,facebook.cc
+DOMAIN-SUFFIX,facebook.com.ar
+DOMAIN-SUFFIX,facebook.com.au
+DOMAIN-SUFFIX,facebook.com.br
+DOMAIN-SUFFIX,facebook.design
+DOMAIN-SUFFIX,facebook.hu
+DOMAIN-SUFFIX,facebook.in
+DOMAIN-SUFFIX,facebook.nl
+DOMAIN-SUFFIX,facebook.se
+DOMAIN-SUFFIX,facebook.shop
+DOMAIN-SUFFIX,facebook.tv
+DOMAIN-SUFFIX,facebook.us
 DOMAIN-SUFFIX,instagram.com.al
 DOMAIN-SUFFIX,instagram.com.bo
+DOMAIN-SUFFIX,instagram.com.br
 
 # ---------------- 十二、Meta 公司域名 ----------------
 # Meta 公司官网、投资者关系、招聘等公司域名。
 DOMAIN-SUFFIX,aboutfacebook.com
-DOMAIN-SUFFIX,facebookinc.com
-DOMAIN-SUFFIX,oculus-china.com
-DOMAIN-SUFFIX,facebookcareer.com
 DOMAIN-SUFFIX,careersatfb.com
+DOMAIN-SUFFIX,expresswifi.com
+DOMAIN-SUFFIX,facebook-corp.com
+DOMAIN-SUFFIX,facebook-newsroom.com
+DOMAIN-SUFFIX,facebookcareer.com
+DOMAIN-SUFFIX,facebookinc.com
+DOMAIN-SUFFIX,fb.careers
